@@ -3,10 +3,6 @@
 
 <head>
 
-  <!-- =========================================
-       META
-  ========================================== -->
-
   <meta charset="UTF-8">
 
   <meta
@@ -16,27 +12,2091 @@
 
   <meta
     name="description"
-    content="optimiert.digital entwickelt moderne Websites, Online-Shops und digitale Lösungen für Unternehmen – individuell, persönlich und klar umgesetzt."
+    content="optimiert.digital entwickelt moderne Websites, Online-Shops und digitale Lösungen für Unternehmen – individuell, klar und persönlich umgesetzt."
   >
 
-  <meta
-    name="theme-color"
-    content="#000000"
-  >
+  <meta name="theme-color" content="#000000">
 
   <title>
     optimiert.digital | Websites & digitale Lösungen
   </title>
 
 
-  <!-- =========================================
-       CSS
-  ========================================== -->
+  <style>
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
+    /* =====================================================
+       OPTIMIERT.DIGITAL
+       ===================================================== */
+
+    :root {
+      --blue: #1463ff;
+      --blue-light: #337cff;
+
+      --black: #000000;
+      --background: #050505;
+      --surface: #090909;
+
+      --white: #ffffff;
+      --text: #f5f5f5;
+      --muted: #858585;
+
+      --border: rgba(255,255,255,.09);
+
+      --container: 1400px;
+    }
+
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+
+      background: var(--background);
+      color: var(--text);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    ::selection {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       CONTAINER
+       ===================================================== */
+
+    .container {
+      width: min(
+        var(--container),
+        calc(100% - 96px)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header {
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      width: 100%;
+
+      background:
+        rgba(0,0,0,.92);
+
+      border-bottom:
+        1px solid var(--border);
+
+      backdrop-filter:
+        blur(18px);
+
+      -webkit-backdrop-filter:
+        blur(18px);
+    }
+
+    .header.scrolled {
+      background:
+        rgba(0,0,0,.97);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.28);
+    }
+
+    .header-inner {
+      width: min(
+        1500px,
+        calc(100% - 64px)
+      );
+
+      min-height: 82px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .logo {
+      width: fit-content;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .logo-mark {
+      position: relative;
+
+      width: 38px;
+      height: 38px;
+
+      flex: 0 0 38px;
+    }
+
+    .logo-ring {
+      position: absolute;
+
+      inset: 5px;
+
+      border:
+        4px solid #ffffff;
+
+      border-radius: 50%;
+    }
+
+    .logo-line {
+      position: absolute;
+
+      top: 17px;
+      left: 0;
+
+      width: 39px;
+      height: 3px;
+
+      border-radius: 10px;
+
+      background:
+        var(--blue);
+
+      transform:
+        rotate(-45deg);
+
+      box-shadow:
+        0 0 16px rgba(20,99,255,.55);
+    }
+
+    .logo-text {
+      color: #ffffff;
+
+      font-size: 14px;
+
+      line-height: 1;
+
+      font-weight: 700;
+
+      letter-spacing: .09em;
+
+      white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    .nav {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 50px;
+    }
+
+    .nav a {
+      position: relative;
+
+      color: #aaaaaa;
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+      transition:
+        color .2s ease;
+    }
+
+    .nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 100%;
+
+      bottom: -9px;
+
+      height: 1px;
+
+      background:
+        var(--blue);
+
+      transition:
+        right .25s ease;
+    }
+
+    .nav a:hover {
+      color: #ffffff;
+    }
+
+    .nav a:hover::after {
+      right: 0;
+    }
+
+
+    /* =====================================================
+       HEADER CTA
+       ===================================================== */
+
+    .header-cta {
+      justify-self: end;
+
+      min-height: 42px;
+
+      padding:
+        0 22px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0d55ef,
+          #176dff
+        );
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      box-shadow:
+        0 7px 26px rgba(20,99,255,.20);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .header-cta:hover {
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 10px 34px rgba(20,99,255,.34);
+    }
+
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+       ===================================================== */
+
+    .menu-button {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      padding: 0;
+
+      border: 0;
+
+      background:
+        transparent;
+
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      width: 24px;
+      height: 2px;
+
+      display: block;
+
+      margin:
+        6px auto;
+
+      border-radius: 10px;
+
+      background:
+        #ffffff;
+
+      transition:
+        transform .25s ease;
+    }
+
+    .menu-button.open
+    span:first-child {
+      transform:
+        translateY(4px)
+        rotate(45deg);
+    }
+
+    .menu-button.open
+    span:last-child {
+      transform:
+        translateY(-4px)
+        rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
+
+    .mobile-menu {
+      display: none;
+    }
+
+
+    /* =====================================================
+       GENERAL
+       ===================================================== */
+
+    .section-label {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin: 0;
+
+      color: #777777;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+
+      width: 6px;
+      height: 6px;
+
+      flex: 0 0 6px;
+
+      border-radius: 50%;
+
+      background:
+        var(--blue);
+
+      box-shadow:
+        0 0 14px rgba(20,99,255,.85);
+    }
+
+    .section-heading {
+      max-width: 900px;
+
+      margin:
+        28px 0 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(48px,5.5vw,82px);
+
+      line-height: .96;
+
+      letter-spacing: -.05em;
+
+      font-weight: 700;
+    }
+
+    .section-heading span {
+      color: var(--blue);
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+
+    .button {
+      min-height: 56px;
+
+      padding:
+        0 24px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 20px;
+
+      border-radius: 10px;
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .button span {
+      transition:
+        transform .25s ease;
+    }
+
+    .button:hover {
+      transform:
+        translateY(-2px);
+    }
+
+    .button:hover span {
+      transform:
+        translateX(3px);
+    }
+
+    .button-primary {
+      background:
+        linear-gradient(
+          135deg,
+          #0d55ef,
+          #176dff
+        );
+
+      color: #ffffff;
+
+      box-shadow:
+        0 10px 35px rgba(20,99,255,.22);
+    }
+
+    .button-primary:hover {
+      box-shadow:
+        0 14px 45px rgba(20,99,255,.36);
+    }
+
+    .button-secondary {
+      border:
+        1px solid rgba(255,255,255,.16);
+
+      background:
+        rgba(255,255,255,.025);
+    }
+
+    .button-secondary:hover {
+      border-color:
+        rgba(255,255,255,.35);
+
+      background:
+        rgba(255,255,255,.05);
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+      position: relative;
+
+      min-height:
+        calc(100svh - 82px);
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 75% 40%,
+          rgba(20,99,255,.09),
+          transparent 31%
+        ),
+        #050505;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 750px;
+      height: 750px;
+
+      right: -400px;
+      top: -350px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(20,99,255,.09);
+
+      filter:
+        blur(150px);
+
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+
+      z-index: 2;
+
+      min-height:
+        calc(100svh - 82px);
+
+      padding:
+        65px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(430px,.85fr)
+        minmax(560px,1.15fr);
+
+      align-items: center;
+
+      gap: 45px;
+    }
+
+
+    /* =====================================================
+       HERO CONTENT
+       ===================================================== */
+
+    .hero-content {
+      position: relative;
+
+      z-index: 5;
+
+      max-width: 680px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin:
+        0 0 24px;
+
+      color:
+        var(--blue);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow::before {
+      content: "";
+
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background:
+        var(--blue);
+
+      box-shadow:
+        0 0 14px rgba(20,99,255,.9);
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(62px,5.7vw,92px);
+
+      line-height: .93;
+
+      letter-spacing: -.055em;
+
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      display: block;
+
+      color:
+        var(--blue);
+    }
+
+    .hero-description {
+      max-width: 610px;
+
+      margin:
+        30px 0 0;
+
+      color:
+        #999999;
+
+      font-size: 18px;
+
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 35px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+    .hero-note {
+      margin-top: 40px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      color: #656565;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .11em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-note::before {
+      content: "";
+
+      width: 34px;
+      height: 1px;
+
+      background:
+        var(--blue);
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+       ===================================================== */
+
+    .hero-visual {
+      position: relative;
+
+      min-height: 650px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual::before {
+      content: "";
+
+      position: absolute;
+
+      width: 70%;
+
+      aspect-ratio: 1;
+
+      border-radius: 50%;
+
+      background:
+        rgba(20,99,255,.14);
+
+      filter:
+        blur(120px);
+
+      opacity: .6;
+    }
+
+    .hero-image {
+      position: relative;
+
+      z-index: 2;
+
+      width: 120%;
+
+      max-width: none;
+
+      height: auto;
+
+      transform:
+        translateX(2%);
+
+      filter:
+        brightness(.95)
+        contrast(1.04);
+
+      -webkit-mask-image:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          #000 7%,
+          #000 88%,
+          transparent 100%
+        );
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          #000 7%,
+          #000 88%,
+          transparent 100%
+        );
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .intro {
+      padding:
+        135px 0;
+
+      background:
+        #000000;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .intro-grid {
+      margin-top: 42px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.35fr)
+        minmax(300px,.65fr);
+
+      align-items: end;
+
+      gap: 100px;
+    }
+
+    .intro h2 {
+      max-width: 880px;
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(54px,6vw,96px);
+
+      line-height: .92;
+
+      letter-spacing: -.055em;
+
+      font-weight: 700;
+    }
+
+    .intro h2 span {
+      display: block;
+
+      color:
+        var(--blue);
+    }
+
+    .intro-copy strong {
+      display: block;
+
+      margin-bottom: 14px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+
+      line-height: 1.4;
+    }
+
+    .intro-copy p {
+      max-width: 430px;
+
+      margin: 0;
+
+      color: #858585;
+
+      font-size: 15px;
+
+      line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       SERVICES
+       ===================================================== */
+
+    .services {
+      padding:
+        125px 0;
+
+      background:
+        #050505;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .services-grid {
+      margin-top: 65px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      border-top:
+        1px solid var(--border);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .service {
+      position: relative;
+
+      min-height: 380px;
+
+      padding: 34px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      overflow: hidden;
+
+      transition:
+        background .35s ease,
+        transform .35s ease;
+    }
+
+    .service:not(:last-child) {
+      border-right:
+        1px solid var(--border);
+    }
+
+    .service::before {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      top: -200px;
+      right: -180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(20,99,255,.14);
+
+      filter:
+        blur(90px);
+
+      opacity: 0;
+
+      transition:
+        opacity .35s ease;
+    }
+
+    .service:hover {
+      transform:
+        translateY(-4px);
+
+      background:
+        rgba(20,99,255,.025);
+    }
+
+    .service:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      position: relative;
+
+      z-index: 2;
+
+      width: 54px;
+      height: 54px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid rgba(20,99,255,.25);
+
+      border-radius: 12px;
+
+      background:
+        rgba(20,99,255,.04);
+
+      color:
+        var(--blue);
+
+      transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+    }
+
+    .service:hover
+    .service-icon {
+      transform:
+        translateY(-4px);
+
+      background:
+        rgba(20,99,255,.1);
+
+      border-color:
+        rgba(20,99,255,.55);
+    }
+
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .service-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .service h3 {
+      margin:
+        0 0 14px;
+
+      color: #ffffff;
+
+      font-size: 29px;
+
+      letter-spacing: -.03em;
+    }
+
+    .service p {
+      max-width: 330px;
+
+      margin: 0;
+
+      color: #777777;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       APPROACH
+       ===================================================== */
+
+    .approach {
+      position: relative;
+
+      padding:
+        140px 0;
+
+      overflow: hidden;
+
+      background:
+        #000000;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .approach::before {
+      content: "";
+
+      position: absolute;
+
+      width: 750px;
+      height: 750px;
+
+      top: -550px;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      border-radius: 50%;
+
+      background:
+        rgba(20,99,255,.14);
+
+      filter:
+        blur(150px);
+    }
+
+    .approach-inner {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .approach-main {
+      margin-top: 42px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.4fr)
+        minmax(300px,.6fr);
+
+      align-items: end;
+
+      gap: 90px;
+    }
+
+    .approach h2 {
+      max-width: 850px;
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(60px,7vw,108px);
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+      font-weight: 700;
+    }
+
+    .approach h2 span {
+      color:
+        var(--blue);
+    }
+
+    .approach-copy strong {
+      display: block;
+
+      margin-bottom: 14px;
+
+      color: #ffffff;
+
+      font-size: 20px;
+
+      line-height: 1.4;
+    }
+
+    .approach-copy p {
+      max-width: 420px;
+
+      margin: 0;
+
+      color: #808080;
+
+      font-size: 15px;
+
+      line-height: 1.75;
+    }
+
+    .principles {
+      margin-top: 85px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      border-top:
+        1px solid var(--border);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .principle {
+      min-height: 225px;
+
+      padding: 34px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      transition:
+        background .3s ease;
+    }
+
+    .principle:not(:last-child) {
+      border-right:
+        1px solid var(--border);
+    }
+
+    .principle:hover {
+      background:
+        rgba(20,99,255,.025);
+    }
+
+    .principle h3 {
+      margin:
+        0 0 12px;
+
+      color: #ffffff;
+
+      font-size: 24px;
+
+      letter-spacing: -.025em;
+    }
+
+    .principle p {
+      max-width: 330px;
+
+      margin: 0;
+
+      color: #737373;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       PROCESS
+       ===================================================== */
+
+    .process {
+      padding:
+        130px 0;
+
+      background:
+        #050505;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .process-list {
+      margin-top: 65px;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .process-item {
+      min-height: 145px;
+
+      padding:
+        32px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(260px,.7fr)
+        1fr;
+
+      align-items: center;
+
+      gap: 70px;
+
+      border-bottom:
+        1px solid var(--border);
+
+      transition:
+        padding-left .3s ease,
+        background .3s ease;
+    }
+
+    .process-item:hover {
+      padding-left: 12px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(20,99,255,.035),
+          transparent 60%
+        );
+    }
+
+    .process-item h3 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(27px,3vw,42px);
+
+      letter-spacing: -.035em;
+    }
+
+    .process-item p {
+      max-width: 540px;
+
+      margin: 0;
+
+      color: #777777;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    .contact {
+      position: relative;
+
+      min-height: 700px;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        #000000;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .contact::before {
+      content: "";
+
+      position: absolute;
+
+      width: 850px;
+      height: 850px;
+
+      left: 50%;
+      bottom: -670px;
+
+      transform:
+        translateX(-50%);
+
+      border-radius: 50%;
+
+      background:
+        rgba(20,99,255,.27);
+
+      filter:
+        blur(150px);
+    }
+
+    .contact-inner {
+      position: relative;
+
+      z-index: 2;
+
+      padding:
+        110px 0;
+
+      text-align: center;
+    }
+
+    .contact-label {
+      margin:
+        0 0 25px;
+
+      color:
+        var(--blue);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: .15em;
+    }
+
+    .contact h2 {
+      max-width: 1050px;
+
+      margin:
+        0 auto;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(58px,7vw,110px);
+
+      line-height: .92;
+
+      letter-spacing: -.06em;
+
+      font-weight: 700;
+    }
+
+    .contact h2 span {
+      display: block;
+
+      color:
+        var(--blue);
+    }
+
+    .contact-description {
+      max-width: 550px;
+
+      margin:
+        30px auto 0;
+
+      color: #858585;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+    }
+
+    .contact .button {
+      margin-top: 36px;
+    }
+
+    .contact-email {
+      width: fit-content;
+
+      margin:
+        25px auto 0;
+
+      display: block;
+
+      color: #6d6d6d;
+
+      font-size: 13px;
+
+      transition:
+        color .2s ease;
+    }
+
+    .contact-email:hover {
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer {
+      background:
+        #000000;
+    }
+
+    .footer-main {
+      padding:
+        70px 0 60px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.5fr
+        .7fr
+        .7fr;
+
+      gap: 80px;
+    }
+
+    .footer-brand p {
+      max-width: 390px;
+
+      margin:
+        24px 0 0;
+
+      color: #727272;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    .footer-column {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      gap: 14px;
+    }
+
+    .footer-column strong {
+      margin-bottom: 8px;
+
+      color: #ffffff;
+
+      font-size: 11px;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      color: #777777;
+
+      font-size: 13px;
+
+      transition:
+        color .2s ease,
+        transform .2s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+
+      transform:
+        translateX(2px);
+    }
+
+    .footer-bottom {
+      min-height: 80px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .footer-bottom p {
+      margin: 0;
+
+      color: #565656;
+
+      font-size: 11px;
+
+      letter-spacing: .04em;
+    }
+
+
+    /* =====================================================
+       REVEAL
+       ===================================================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(26px);
+
+      transition:
+        opacity .75s cubic-bezier(.2,.7,.2,1),
+        transform .75s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media screen and (max-width: 1050px) {
+
+      .container {
+        width:
+          calc(100% - 64px);
+      }
+
+      .header-inner {
+        width:
+          calc(100% - 48px);
+
+        min-height:
+          74px;
+
+        display: flex;
+
+        justify-content:
+          space-between;
+      }
+
+      .nav,
+      .header-cta {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .mobile-menu {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding:
+          18px 32px 25px;
+
+        background:
+          rgba(0,0,0,.99);
+
+        border-top:
+          1px solid rgba(255,255,255,.05);
+
+        border-bottom:
+          1px solid var(--border);
+      }
+
+      .mobile-menu.open {
+        display: grid;
+      }
+
+      .mobile-menu > a {
+        padding:
+          18px 2px;
+
+        color: #eeeeee;
+
+        border-bottom:
+          1px solid var(--border);
+
+        font-size: 16px;
+      }
+
+      .mobile-menu .mobile-cta {
+        min-height: 54px;
+
+        margin-top: 22px;
+
+        padding:
+          0 18px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        border: 0;
+
+        border-radius: 10px;
+
+        background:
+          linear-gradient(
+            135deg,
+            #0d55ef,
+            #176dff
+          );
+
+        font-weight: 600;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        min-height: auto;
+
+        padding:
+          85px 0 45px;
+
+        grid-template-columns:
+          1fr;
+
+        gap: 25px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero-visual {
+        min-height: 500px;
+      }
+
+      .hero-image {
+        width:
+          min(1050px,110%);
+      }
+
+      .intro-grid,
+      .approach-main {
+        grid-template-columns:
+          1fr;
+
+        gap: 45px;
+      }
+
+      .services-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+      .service {
+        min-height: 290px;
+      }
+
+      .service:not(:last-child) {
+        border-right: 0;
+
+        border-bottom:
+          1px solid var(--border);
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media screen and (max-width: 749px) {
+
+      html {
+        scroll-padding-top: 70px;
+      }
+
+      .container {
+        width:
+          calc(100% - 40px);
+      }
+
+      .header-inner {
+        width:
+          calc(100% - 32px);
+
+        min-height:
+          68px;
+      }
+
+      .logo {
+        gap: 9px;
+      }
+
+      .logo-mark {
+        width: 31px;
+        height: 31px;
+
+        flex-basis: 31px;
+      }
+
+      .logo-ring {
+        inset: 4px;
+
+        border-width: 3px;
+      }
+
+      .logo-line {
+        top: 14px;
+
+        width: 32px;
+        height: 2px;
+      }
+
+      .logo-text {
+        font-size: 11px;
+
+        letter-spacing: .08em;
+      }
+
+      .mobile-menu {
+        padding:
+          15px 20px 22px;
+      }
+
+
+      /* HERO */
+
+      .hero-inner {
+        padding:
+          58px 0 15px;
+      }
+
+      .hero-eyebrow {
+        max-width: 300px;
+
+        margin-bottom: 18px;
+
+        font-size: 10px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(49px,14vw,66px);
+
+        line-height: .95;
+      }
+
+      .hero-description {
+        margin-top: 23px;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+      }
+
+      .hero-actions {
+        margin-top: 28px;
+
+        display: grid;
+
+        grid-template-columns:
+          1fr;
+
+        gap: 11px;
+      }
+
+      .button {
+        width: 100%;
+
+        min-height: 54px;
+
+        justify-content:
+          space-between;
+      }
+
+      .hero-note {
+        margin-top: 30px;
+
+        font-size: 9px;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+
+        margin:
+          5px -20px 0;
+      }
+
+      .hero-image {
+        width: 120%;
+
+        transform: none;
+      }
+
+
+      /* INTRO */
+
+      .intro {
+        padding:
+          85px 0;
+      }
+
+      .intro-grid {
+        margin-top: 30px;
+
+        gap: 38px;
+      }
+
+      .intro h2 {
+        font-size:
+          clamp(47px,14vw,68px);
+      }
+
+      .intro-copy strong {
+        font-size: 18px;
+      }
+
+      .intro-copy p {
+        font-size: 14px;
+      }
+
+
+      /* GENERAL */
+
+      .section-heading {
+        margin-top: 24px;
+
+        font-size:
+          clamp(43px,13vw,62px);
+      }
+
+
+      /* SERVICES */
+
+      .services {
+        padding:
+          85px 0;
+      }
+
+      .services-grid {
+        margin-top: 45px;
+      }
+
+      .service {
+        min-height: 270px;
+
+        padding:
+          28px 4px;
+      }
+
+      .service h3 {
+        font-size: 25px;
+      }
+
+      .service p {
+        padding-right: 20px;
+
+        font-size: 13px;
+      }
+
+
+      /* APPROACH */
+
+      .approach {
+        padding:
+          90px 0;
+      }
+
+      .approach-main {
+        margin-top: 30px;
+
+        gap: 38px;
+      }
+
+      .approach h2 {
+        font-size:
+          clamp(53px,16vw,74px);
+      }
+
+      .approach-copy strong {
+        font-size: 18px;
+      }
+
+      .approach-copy p {
+        font-size: 14px;
+      }
+
+      .principles {
+        margin-top: 55px;
+
+        grid-template-columns:
+          1fr;
+      }
+
+      .principle {
+        min-height: 190px;
+
+        padding:
+          28px 4px;
+      }
+
+      .principle:not(:last-child) {
+        border-right: 0;
+
+        border-bottom:
+          1px solid var(--border);
+      }
+
+
+      /* PROCESS */
+
+      .process {
+        padding:
+          85px 0;
+      }
+
+      .process-list {
+        margin-top: 45px;
+      }
+
+      .process-item {
+        min-height: auto;
+
+        padding:
+          28px 0;
+
+        grid-template-columns:
+          1fr;
+
+        gap: 12px;
+      }
+
+      .process-item:hover {
+        padding-left: 0;
+      }
+
+      .process-item h3 {
+        font-size: 28px;
+      }
+
+      .process-item p {
+        font-size: 13px;
+      }
+
+
+      /* CONTACT */
+
+      .contact {
+        min-height: 640px;
+      }
+
+      .contact-inner {
+        padding:
+          90px 0;
+      }
+
+      .contact h2 {
+        font-size:
+          clamp(51px,15vw,72px);
+      }
+
+      .contact-description {
+        font-size: 15px;
+      }
+
+      .contact .button {
+        max-width: 420px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-main {
+        padding:
+          58px 0 48px;
+
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+
+        column-gap: 30px;
+
+        row-gap: 48px;
+      }
+
+      .footer-brand {
+        grid-column:
+          1 / -1;
+      }
+
+      .footer-bottom {
+        min-height: auto;
+
+        padding:
+          24px 0;
+      }
+
+      .footer-bottom p {
+        font-size: 10px;
+      }
+
+      .footer-bottom
+      p:last-child {
+        text-align: right;
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION
+       ===================================================== */
+
+    @media (
+      prefers-reduced-motion: reduce
+    ) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+
+        transform: none;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -44,46 +2104,42 @@
 <body>
 
 
-  <!-- =========================================
+  <!-- ===================================================
        HEADER
-  ========================================== -->
+       =================================================== -->
 
-  <header class="od-header">
+  <header class="header">
 
-    <div class="od-header__inner">
+    <div class="header-inner">
 
-
-      <!-- LOGO -->
 
       <a
-        href="index.html"
-        class="od-logo"
-        aria-label="optimiert.digital Startseite"
+        href="#top"
+        class="logo"
+        aria-label="optimiert.digital"
       >
 
         <span
-          class="od-logo__mark"
+          class="logo-mark"
           aria-hidden="true"
         >
 
-          <span class="od-logo__ring"></span>
+          <span class="logo-ring"></span>
 
-          <span class="od-logo__line"></span>
+          <span class="logo-line"></span>
 
         </span>
 
 
-        <span class="od-logo__text">
+        <span class="logo-text">
           OPTIMIERT.DIGITAL
         </span>
 
       </a>
 
 
-      <!-- DESKTOP NAVIGATION -->
-
       <nav
-        class="od-header__nav"
+        class="nav"
         aria-label="Hauptnavigation"
       >
 
@@ -91,35 +2147,30 @@
           Leistungen
         </a>
 
-        <a href="#projekte">
-          Projekte
+        <a href="#ansatz">
+          Über uns
         </a>
 
-        <a href="#ueber-uns">
-          Über uns
+        <a href="#prozess">
+          Prozess
         </a>
 
       </nav>
 
 
-      <!-- DESKTOP CTA -->
-
       <a
         href="#kontakt"
-        class="od-header__cta"
+        class="header-cta"
       >
         Kontakt
       </a>
 
 
-      <!-- MOBILE MENU BUTTON -->
-
       <button
-        class="od-menu-button"
+        class="menu-button"
         type="button"
         aria-label="Menü öffnen"
         aria-expanded="false"
-        aria-controls="mobile-navigation"
       >
 
         <span></span>
@@ -130,35 +2181,27 @@
     </div>
 
 
-    <!-- MOBILE NAVIGATION -->
-
-    <div
-      class="od-mobile-menu"
-      id="mobile-navigation"
-    >
+    <div class="mobile-menu">
 
       <a href="#leistungen">
         Leistungen
       </a>
 
-      <a href="#projekte">
-        Projekte
+      <a href="#ansatz">
+        Über uns
       </a>
 
-      <a href="#ueber-uns">
-        Über uns
+      <a href="#prozess">
+        Prozess
       </a>
 
       <a
         href="#kontakt"
-        class="od-mobile-menu__cta"
+        class="mobile-cta"
       >
         Kontakt
 
-        <span>
-          →
-        </span>
-
+        <span>→</span>
       </a>
 
     </div>
@@ -167,40 +2210,26 @@
 
 
 
-  <!-- =========================================
-       MAIN
-  ========================================== -->
-
-  <main>
+  <main id="top">
 
 
-    <!-- =========================================
+    <!-- =================================================
          HERO
-    ========================================== -->
+         ================================================= -->
 
-    <section class="od-hero">
+    <section class="hero">
 
-      <div class="od-hero__glow"></div>
-
-
-      <div class="od-container od-hero__inner">
+      <div class="container hero-inner">
 
 
-        <!-- HERO CONTENT -->
+        <div class="hero-content">
 
-        <div class="od-hero__content">
-
-
-          <p class="od-eyebrow">
-
-            <span class="od-eyebrow__dot"></span>
-
-            DIGITALE LÖSUNGEN FÜR UNTERNEHMEN
-
+          <p class="hero-eyebrow">
+            Digitale Lösungen für Unternehmen
           </p>
 
 
-          <h1 class="od-hero__title">
+          <h1>
 
             Lokal stark.
 
@@ -211,7 +2240,7 @@
           </h1>
 
 
-          <p class="od-hero__description">
+          <p class="hero-description">
 
             Websites, Online-Shops und digitale Lösungen,
             die zu deinem Unternehmen passen – individuell
@@ -220,70 +2249,48 @@
           </p>
 
 
-          <!-- HERO BUTTONS -->
-
-          <div class="od-hero__actions">
+          <div class="hero-actions">
 
             <a
               href="#kontakt"
-              class="od-button od-button--primary"
+              class="button button-primary"
             >
 
               Projekt besprechen
 
-              <span>
-                →
-              </span>
+              <span>→</span>
 
             </a>
 
 
             <a
-              href="#projekte"
-              class="od-button od-button--secondary"
+              href="#leistungen"
+              class="button button-secondary"
             >
 
-              Projekte ansehen
+              Leistungen ansehen
 
-              <span>
-                ↓
-              </span>
+              <span>↓</span>
 
             </a>
 
           </div>
 
 
-          <!-- SMALL TRUST LINE -->
-
-          <div class="od-hero__trust">
-
-            <span class="od-hero__trust-line"></span>
-
-            <p>
-              Persönlich · Individuell · Direkt
-            </p>
-
+          <div class="hero-note">
+            Persönlich · Individuell · Direkt
           </div>
 
         </div>
 
 
 
-        <!-- HERO VISUAL -->
-
-        <div class="od-hero__visual">
-
-          <div class="od-hero__visual-glow"></div>
+        <div class="hero-visual">
 
           <img
-            src="assets/hero.png"
-            alt="optimiert.digital – Websites, Online-Shops und digitale Lösungen"
-            class="od-hero__image"
-            width="1536"
-            height="1024"
-            loading="eager"
-            fetchpriority="high"
+            src="hero.png"
+            alt="optimiert.digital – digitale Lösungen für Unternehmen"
+            class="hero-image"
           >
 
         </div>
@@ -295,28 +2302,24 @@
 
 
 
-    <!-- =========================================
-         INTRO / POSITIONIERUNG
-    ========================================== -->
+    <!-- =================================================
+         INTRO
+         ================================================= -->
 
-    <section class="od-intro">
+    <section class="intro">
 
-      <div class="od-container">
-
-
-        <div class="od-section-label">
-
-          <span></span>
-
-          WAS WIR MACHEN
-
-        </div>
+      <div class="container">
 
 
-        <div class="od-intro__grid">
+        <p class="section-label">
+          Was wir machen
+        </p>
 
 
-          <h2 class="od-intro__title">
+        <div class="intro-grid reveal">
+
+
+          <h2>
 
             Dein Unternehmen.
 
@@ -327,18 +2330,20 @@
           </h2>
 
 
-          <div class="od-intro__content">
+          <div class="intro-copy">
 
-            <p class="od-intro__lead">
+            <strong>
               Digital muss nicht kompliziert sein.
-            </p>
+            </strong>
 
             <p>
+
               Wir entwickeln digitale Lösungen,
               die wirklich zu deinem Unternehmen passen.
               Vom professionellen Webauftritt über
-              E-Commerce bis zu individuellen digitalen
-              Lösungen.
+              E-Commerce bis zu individuellen
+              digitalen Lösungen.
+
             </p>
 
           </div>
@@ -352,113 +2357,91 @@
 
 
 
-    <!-- =========================================
+    <!-- =================================================
          LEISTUNGEN
-    ========================================== -->
+         ================================================= -->
 
     <section
-      class="od-services"
+      class="services"
       id="leistungen"
     >
 
-      <div class="od-container">
+      <div class="container">
 
 
-        <!-- SECTION HEADER -->
-
-        <div class="od-section-header">
-
-          <div class="od-section-label">
-
-            <span></span>
-
-            LEISTUNGEN
-
-          </div>
+        <p class="section-label">
+          Leistungen
+        </p>
 
 
-          <h2>
-            Was wir digital
-            <span>für dich lösen.</span>
-          </h2>
+        <h2 class="section-heading reveal">
 
-        </div>
+          Was wir digital
+          <span>für dich lösen.</span>
+
+        </h2>
 
 
 
-        <!-- SERVICES GRID -->
-
-        <div class="od-services__grid">
+        <div class="services-grid">
 
 
           <!-- WEBSITE -->
 
-          <article class="od-service-card">
+          <article class="service reveal">
 
 
-            <div class="od-service-card__top">
+            <div class="service-icon">
 
-              <span class="od-service-card__number">
-                01
-              </span>
+              <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                aria-hidden="true"
+              >
 
+                <rect
+                  x="4"
+                  y="5"
+                  width="24"
+                  height="18"
+                  rx="2.5"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
 
-              <div class="od-service-card__icon">
+                <path
+                  d="M10 27H22"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
 
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <path
+                  d="M16 23V27"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
 
-                  <rect
-                    x="4"
-                    y="5"
-                    width="24"
-                    height="18"
-                    rx="2.5"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
-
-                  <path
-                    d="M10 27H22"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                  />
-
-                  <path
-                    d="M16 23V27"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                  />
-
-                </svg>
-
-              </div>
+              </svg>
 
             </div>
 
 
-            <div class="od-service-card__content">
+            <div class="service-content">
 
               <h3>
                 Websites
               </h3>
 
               <p>
+
                 Individuelle Websites für Unternehmen,
                 die professionell auftreten und digital
                 überzeugen wollen.
+
               </p>
 
-            </div>
-
-
-            <div class="od-service-card__arrow">
-              ↗
             </div>
 
           </article>
@@ -467,190 +2450,140 @@
 
           <!-- ONLINE SHOP -->
 
-          <article class="od-service-card">
+          <article class="service reveal">
 
 
-            <div class="od-service-card__top">
+            <div class="service-icon">
 
-              <span class="od-service-card__number">
-                02
-              </span>
+              <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                aria-hidden="true"
+              >
 
+                <path
+                  d="M5 7H8L11 21H25L28 11H10"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
 
-              <div class="od-service-card__icon">
+                <circle
+                  cx="14"
+                  cy="26"
+                  r="1.5"
+                  fill="currentColor"
+                />
 
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <circle
+                  cx="24"
+                  cy="26"
+                  r="1.5"
+                  fill="currentColor"
+                />
 
-                  <path
-                    d="M5 7H8L11 21H25L28 11H10"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-
-                  <circle
-                    cx="14"
-                    cy="26"
-                    r="1.5"
-                    fill="currentColor"
-                  />
-
-                  <circle
-                    cx="24"
-                    cy="26"
-                    r="1.5"
-                    fill="currentColor"
-                  />
-
-                </svg>
-
-              </div>
+              </svg>
 
             </div>
 
 
-            <div class="od-service-card__content">
+            <div class="service-content">
 
               <h3>
                 Online-Shops
               </h3>
 
               <p>
-                Durchdachte E-Commerce-Lösungen für
-                Unternehmen, die Produkte oder
+
+                Durchdachte E-Commerce-Lösungen
+                für Unternehmen, die Produkte oder
                 Dienstleistungen digital verkaufen.
+
               </p>
 
-            </div>
-
-
-            <div class="od-service-card__arrow">
-              ↗
             </div>
 
           </article>
 
 
 
-          <!-- DIGITALE LÖSUNGEN -->
+          <!-- DIGITAL -->
 
-          <article class="od-service-card">
-
-
-            <div class="od-service-card__top">
-
-              <span class="od-service-card__number">
-                03
-              </span>
+          <article class="service reveal">
 
 
-              <div class="od-service-card__icon">
+            <div class="service-icon">
 
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  aria-hidden="true"
-                >
+              <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                aria-hidden="true"
+              >
 
-                  <circle
-                    cx="8"
-                    cy="8"
-                    r="3"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
 
-                  <circle
-                    cx="24"
-                    cy="16"
-                    r="3"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
+                <circle
+                  cx="24"
+                  cy="16"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
 
-                  <circle
-                    cx="8"
-                    cy="24"
-                    r="3"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                  />
+                <circle
+                  cx="8"
+                  cy="24"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
 
-                  <path
-                    d="M11 8H17C20.87 8 24 11.13 24 15"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                  />
+                <path
+                  d="M11 8H17C20.87 8 24 11.13 24 15"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
 
-                  <path
-                    d="M21 16H17C12.03 16 8 19.58 8 24"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                  />
+                <path
+                  d="M21 16H17C12.03 16 8 19.58 8 24"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
 
-                </svg>
-
-              </div>
+              </svg>
 
             </div>
 
 
-            <div class="od-service-card__content">
+            <div class="service-content">
 
               <h3>
                 Digitale Lösungen
               </h3>
 
               <p>
+
                 Individuelle digitale Lösungen,
                 die Prozesse vereinfachen und dein
                 Unternehmen sinnvoll unterstützen.
+
               </p>
 
             </div>
 
-
-            <div class="od-service-card__arrow">
-              ↗
-            </div>
-
           </article>
 
 
         </div>
-
-
-        <!-- SERVICES CTA -->
-
-        <div class="od-services__footer">
-
-          <p>
-            Du weißt noch nicht genau, welche Lösung
-            zu deinem Unternehmen passt?
-          </p>
-
-          <a
-            href="#kontakt"
-            class="od-text-link"
-          >
-
-            Gemeinsam herausfinden
-
-            <span>
-              →
-            </span>
-
-          </a>
-
-        </div>
-
 
       </div>
 
@@ -658,170 +2591,24 @@
 
 
 
-    <!-- =========================================
-         PROJEKTE
-    ========================================== -->
+    <!-- =================================================
+         ANSATZ
+         ================================================= -->
 
     <section
-      class="od-projects"
-      id="projekte"
+      class="approach"
+      id="ansatz"
     >
 
-      <div class="od-container">
+      <div class="container approach-inner">
 
 
-        <div class="od-section-header">
+        <p class="section-label">
+          Unser Ansatz
+        </p>
 
-          <div class="od-section-label">
 
-            <span></span>
-
-            AUSGEWÄHLTE PROJEKTE
-
-          </div>
-
-
-          <h2>
-            Nicht nur zeigen.
-            <span>Umsetzen.</span>
-          </h2>
-
-        </div>
-
-
-
-        <div class="od-projects__grid">
-
-
-          <!-- MBC -->
-
-          <article class="od-project-card">
-
-            <div class="od-project-card__visual">
-
-              <div class="od-project-card__placeholder">
-
-                <span>
-                  MBC
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="od-project-card__info">
-
-              <div>
-
-                <p class="od-project-card__category">
-                  Immobilien · Webdesign
-                </p>
-
-                <h3>
-                  mbc Immobilien
-                </h3>
-
-              </div>
-
-
-              <span class="od-project-card__arrow">
-                ↗
-              </span>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- JM -->
-
-          <article class="od-project-card">
-
-            <div class="od-project-card__visual">
-
-              <div class="od-project-card__placeholder">
-
-                <span>
-                  JM
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="od-project-card__info">
-
-              <div>
-
-                <p class="od-project-card__category">
-                  Barber · Webdesign
-                </p>
-
-                <h3>
-                  JM Barbershop
-                </h3>
-
-              </div>
-
-
-              <span class="od-project-card__arrow">
-                ↗
-              </span>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-        <div class="od-projects__bottom">
-
-          <p>
-            Unterschiedliche Unternehmen.
-            Unterschiedliche Anforderungen.
-            Individuelle Lösungen.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         ÜBER UNS / ANSATZ
-    ========================================== -->
-
-    <section
-      class="od-approach"
-      id="ueber-uns"
-    >
-
-      <div class="od-approach__glow"></div>
-
-
-      <div class="od-container">
-
-
-        <div class="od-section-label">
-
-          <span></span>
-
-          UNSER ANSATZ
-
-        </div>
-
-
-
-        <div class="od-approach__main">
+        <div class="approach-main reveal">
 
 
           <h2>
@@ -837,17 +2624,18 @@
           </h2>
 
 
-
-          <div class="od-approach__copy">
+          <div class="approach-copy">
 
             <strong>
               Kein unnötiger Agentur-Ballast.
             </strong>
 
             <p>
-              Klare Kommunikation, kurze Wege und
-              Lösungen, die wirklich zu deinem
-              Unternehmen passen.
+
+              Klare Kommunikation, kurze Wege
+              und digitale Lösungen, die wirklich
+              zu deinem Unternehmen passen.
+
             </p>
 
           </div>
@@ -857,64 +2645,56 @@
 
 
 
-        <!-- PRINCIPLES -->
-
-        <div class="od-principles">
+        <div class="principles">
 
 
-          <article class="od-principle">
-
-            <span class="od-principle__number">
-              01
-            </span>
+          <article class="principle reveal">
 
             <h3>
-              Direkt.
+              Persönlich.
             </h3>
 
             <p>
-              Persönliche Zusammenarbeit und
-              klare Kommunikation ohne unnötige
-              Umwege.
+
+              Direkter Kontakt und persönliche
+              Zusammenarbeit vom ersten Gespräch
+              bis zur Umsetzung.
+
             </p>
 
           </article>
 
 
 
-          <article class="od-principle">
-
-            <span class="od-principle__number">
-              02
-            </span>
+          <article class="principle reveal">
 
             <h3>
               Individuell.
             </h3>
 
             <p>
+
               Keine Lösungen von der Stange.
               Wir bauen das, was dein Unternehmen
               wirklich braucht.
+
             </p>
 
           </article>
 
 
 
-          <article class="od-principle">
-
-            <span class="od-principle__number">
-              03
-            </span>
+          <article class="principle reveal">
 
             <h3>
               Durchdacht.
             </h3>
 
             <p>
+
               Design, Technik und Prozesse
               greifen sinnvoll ineinander.
+
             </p>
 
           </article>
@@ -922,163 +2702,133 @@
 
         </div>
 
-
       </div>
 
     </section>
 
 
 
-    <!-- =========================================
-         PROCESS
-    ========================================== -->
-
-    <section class="od-process">
-
-      <div class="od-container">
-
-
-        <div class="od-section-header">
-
-          <div class="od-section-label">
-
-            <span></span>
-
-            ZUSAMMENARBEIT
-
-          </div>
-
-
-          <h2>
-            Von der Idee
-            <span>bis zum Launch.</span>
-          </h2>
-
-        </div>
-
-
-
-        <div class="od-process__steps">
-
-
-          <article class="od-process-step">
-
-            <span>
-              01
-            </span>
-
-            <div>
-
-              <h3>
-                Verstehen
-              </h3>
-
-              <p>
-                Wir sprechen über dein Unternehmen,
-                deine aktuelle Situation und dein Ziel.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="od-process-step">
-
-            <span>
-              02
-            </span>
-
-            <div>
-
-              <h3>
-                Entwickeln
-              </h3>
-
-              <p>
-                Wir entwickeln eine Lösung,
-                die genau zu deinen Anforderungen
-                passt.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="od-process-step">
-
-            <span>
-              03
-            </span>
-
-            <div>
-
-              <h3>
-                Umsetzen
-              </h3>
-
-              <p>
-                Design, Technik und Inhalte
-                werden sauber zusammengeführt.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="od-process-step">
-
-            <span>
-              04
-            </span>
-
-            <div>
-
-              <h3>
-                Weiterdenken
-              </h3>
-
-              <p>
-                Auch nach dem Launch bleiben
-                wir Ansprechpartner und entwickeln
-                deine Lösung weiter.
-              </p>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         FINAL CTA
-    ========================================== -->
+    <!-- =================================================
+         PROZESS
+         ================================================= -->
 
     <section
-      class="od-contact"
+      class="process"
+      id="prozess"
+    >
+
+      <div class="container">
+
+
+        <p class="section-label">
+          Zusammenarbeit
+        </p>
+
+
+        <h2 class="section-heading reveal">
+
+          Von der Idee
+          <span>bis zum Launch.</span>
+
+        </h2>
+
+
+
+        <div class="process-list">
+
+
+          <article class="process-item reveal">
+
+            <h3>
+              Verstehen.
+            </h3>
+
+            <p>
+
+              Wir sprechen über dein Unternehmen,
+              deine aktuelle Situation und darüber,
+              was du digital erreichen möchtest.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="process-item reveal">
+
+            <h3>
+              Entwickeln.
+            </h3>
+
+            <p>
+
+              Daraus entsteht eine individuelle
+              Lösung mit klarer Struktur,
+              passendem Design und sinnvoller Technik.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="process-item reveal">
+
+            <h3>
+              Umsetzen.
+            </h3>
+
+            <p>
+
+              Wir bringen alles zusammen,
+              testen den finalen Auftritt und
+              machen dein Projekt bereit für den Launch.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="process-item reveal">
+
+            <h3>
+              Weiterdenken.
+            </h3>
+
+            <p>
+
+              Auch nach dem Launch bleiben wir
+              Ansprechpartner und entwickeln
+              deine digitale Lösung bei Bedarf weiter.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTACT
+         ================================================= -->
+
+    <section
+      class="contact"
       id="kontakt"
     >
 
-      <div class="od-contact__glow"></div>
+      <div class="container contact-inner reveal">
 
 
-      <div class="od-container od-contact__inner">
-
-
-        <p class="od-contact__eyebrow">
+        <p class="contact-label">
           BEREIT FÜR DEN NÄCHSTEN SCHRITT?
         </p>
 
@@ -1094,7 +2844,7 @@
         </h2>
 
 
-        <p class="od-contact__description">
+        <p class="contact-description">
 
           Erzähl uns kurz, wo du aktuell stehst
           und was du digital verbessern möchtest.
@@ -1104,21 +2854,19 @@
 
         <a
           href="mailto:alex@optimiert.digital"
-          class="od-button od-button--primary od-contact__button"
+          class="button button-primary"
         >
 
           Projekt besprechen
 
-          <span>
-            →
-          </span>
+          <span>→</span>
 
         </a>
 
 
         <a
           href="mailto:alex@optimiert.digital"
-          class="od-contact__email"
+          class="contact-email"
         >
           alex@optimiert.digital
         </a>
@@ -1133,39 +2881,36 @@
 
 
 
-  <!-- =========================================
+  <!-- ===================================================
        FOOTER
-  ========================================== -->
+       =================================================== -->
 
-  <footer class="od-footer">
+  <footer class="footer">
 
-    <div class="od-container od-footer__top">
+    <div class="container footer-main">
 
 
-      <!-- BRAND -->
-
-      <div class="od-footer__brand">
+      <div class="footer-brand">
 
 
         <a
-          href="index.html"
-          class="od-logo"
-          aria-label="optimiert.digital Startseite"
+          href="#top"
+          class="logo"
         >
 
           <span
-            class="od-logo__mark"
+            class="logo-mark"
             aria-hidden="true"
           >
 
-            <span class="od-logo__ring"></span>
+            <span class="logo-ring"></span>
 
-            <span class="od-logo__line"></span>
+            <span class="logo-line"></span>
 
           </span>
 
 
-          <span class="od-logo__text">
+          <span class="logo-text">
             OPTIMIERT.DIGITAL
           </span>
 
@@ -1173,8 +2918,10 @@
 
 
         <p>
+
           Websites, Online-Shops und digitale Lösungen
           für Unternehmen.
+
         </p>
 
 
@@ -1182,24 +2929,22 @@
 
 
 
-      <!-- NAVIGATION -->
+      <div class="footer-column">
 
-      <div class="od-footer__column">
-
-        <p class="od-footer__heading">
+        <strong>
           Navigation
-        </p>
+        </strong>
 
         <a href="#leistungen">
           Leistungen
         </a>
 
-        <a href="#projekte">
-          Projekte
+        <a href="#ansatz">
+          Über uns
         </a>
 
-        <a href="#ueber-uns">
-          Über uns
+        <a href="#prozess">
+          Prozess
         </a>
 
         <a href="#kontakt">
@@ -1210,13 +2955,11 @@
 
 
 
-      <!-- LEGAL -->
+      <div class="footer-column">
 
-      <div class="od-footer__column">
-
-        <p class="od-footer__heading">
+        <strong>
           Rechtliches
-        </p>
+        </strong>
 
         <a href="impressum.html">
           Impressum
@@ -1237,13 +2980,12 @@
 
 
 
-    <div class="od-container od-footer__bottom">
+    <div class="container footer-bottom">
 
       <p>
-        © <span id="current-year">2026</span>
+        © <span id="year">2026</span>
         optimiert.digital
       </p>
-
 
       <p>
         Digital. Einfach. Optimiert.
@@ -1255,14 +2997,335 @@
 
 
 
-  <!-- =========================================
+  <!-- ===================================================
        JAVASCRIPT
-  ========================================== -->
+       =================================================== -->
 
-  <script
-    src="js/main.js"
-    defer
-  ></script>
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        /* ===============================================
+           ELEMENTS
+           =============================================== */
+
+        const body =
+          document.body;
+
+        const header =
+          document.querySelector(
+            ".header"
+          );
+
+        const menuButton =
+          document.querySelector(
+            ".menu-button"
+          );
+
+        const mobileMenu =
+          document.querySelector(
+            ".mobile-menu"
+          );
+
+        const mobileLinks =
+          document.querySelectorAll(
+            ".mobile-menu a"
+          );
+
+        const year =
+          document.querySelector(
+            "#year"
+          );
+
+
+        /* ===============================================
+           YEAR
+           =============================================== */
+
+        if (year) {
+
+          year.textContent =
+            new Date().getFullYear();
+
+        }
+
+
+        /* ===============================================
+           MOBILE MENU
+           =============================================== */
+
+        function closeMenu() {
+
+          if (
+            !menuButton ||
+            !mobileMenu
+          ) {
+            return;
+          }
+
+          menuButton.classList.remove(
+            "open"
+          );
+
+          mobileMenu.classList.remove(
+            "open"
+          );
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuButton.setAttribute(
+            "aria-label",
+            "Menü öffnen"
+          );
+
+          body.classList.remove(
+            "menu-open"
+          );
+
+        }
+
+
+        function openMenu() {
+
+          if (
+            !menuButton ||
+            !mobileMenu
+          ) {
+            return;
+          }
+
+          menuButton.classList.add(
+            "open"
+          );
+
+          mobileMenu.classList.add(
+            "open"
+          );
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "true"
+          );
+
+          menuButton.setAttribute(
+            "aria-label",
+            "Menü schließen"
+          );
+
+          body.classList.add(
+            "menu-open"
+          );
+
+        }
+
+
+        if (
+          menuButton &&
+          mobileMenu
+        ) {
+
+          menuButton.addEventListener(
+            "click",
+            function () {
+
+              if (
+                mobileMenu.classList.contains(
+                  "open"
+                )
+              ) {
+
+                closeMenu();
+
+              } else {
+
+                openMenu();
+
+              }
+
+            }
+          );
+
+        }
+
+
+        mobileLinks.forEach(
+          function (link) {
+
+            link.addEventListener(
+              "click",
+              closeMenu
+            );
+
+          }
+        );
+
+
+        document.addEventListener(
+          "keydown",
+          function (event) {
+
+            if (
+              event.key === "Escape"
+            ) {
+
+              closeMenu();
+
+            }
+
+          }
+        );
+
+
+        window.addEventListener(
+          "resize",
+          function () {
+
+            if (
+              window.innerWidth > 1050
+            ) {
+
+              closeMenu();
+
+            }
+
+          }
+        );
+
+
+        /* ===============================================
+           HEADER SCROLL
+           =============================================== */
+
+        function updateHeader() {
+
+          if (!header) {
+            return;
+          }
+
+          if (
+            window.scrollY > 20
+          ) {
+
+            header.classList.add(
+              "scrolled"
+            );
+
+          } else {
+
+            header.classList.remove(
+              "scrolled"
+            );
+
+          }
+
+        }
+
+
+        updateHeader();
+
+
+        window.addEventListener(
+          "scroll",
+          updateHeader,
+          {
+            passive: true
+          }
+        );
+
+
+        /* ===============================================
+           SCROLL REVEAL
+           =============================================== */
+
+        const reveals =
+          document.querySelectorAll(
+            ".reveal"
+          );
+
+
+        if (
+          "IntersectionObserver"
+          in window
+        ) {
+
+          const observer =
+            new IntersectionObserver(
+
+              function (
+                entries,
+                observerInstance
+              ) {
+
+                entries.forEach(
+                  function (entry) {
+
+                    if (
+                      entry.isIntersecting
+                    ) {
+
+                      entry.target
+                        .classList
+                        .add(
+                          "visible"
+                        );
+
+                      observerInstance
+                        .unobserve(
+                          entry.target
+                        );
+
+                    }
+
+                  }
+                );
+
+              },
+
+              {
+                threshold: .1,
+
+                rootMargin:
+                  "0px 0px -35px 0px"
+              }
+
+            );
+
+
+          reveals.forEach(
+            function (element) {
+
+              observer.observe(
+                element
+              );
+
+            }
+          );
+
+
+        } else {
+
+          reveals.forEach(
+            function (element) {
+
+              element.classList.add(
+                "visible"
+              );
+
+            }
+          );
+
+        }
+
+      }
+    );
+
+  </script>
 
 
 </body>
