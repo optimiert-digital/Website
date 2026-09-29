@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
+  <!-- =========================================
+       META
+  ========================================== -->
+
   <meta charset="UTF-8">
 
   <meta
@@ -10,820 +16,76 @@
 
   <meta
     name="description"
-    content="optimiert.digital entwickelt moderne Websites, Online-Shops und digitale Lösungen für Unternehmen."
+    content="optimiert.digital entwickelt moderne Websites, Online-Shops und digitale Lösungen für Unternehmen – individuell, persönlich und klar umgesetzt."
   >
 
-  <title>optimiert.digital — Websites & digitale Lösungen</title>
+  <meta
+    name="theme-color"
+    content="#000000"
+  >
 
-  <style>
-    /* =========================================
-       OPTIMIERT.DIGITAL
-       STARTSEITE V1
-       ========================================= */
+  <title>
+    optimiert.digital | Websites & digitale Lösungen
+  </title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <!-- =========================================
+       CSS
+  ========================================== -->
 
-    body {
-      background: #070707;
-      color: #f5f5f5;
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-
-    /* =========================================
-       HEADER
-       ========================================= */
-
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      z-index: 1000;
-
-      border-bottom: 1px solid rgba(255,255,255,.08);
-
-      background: rgba(7,7,7,.72);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .header-inner {
-      width: min(1380px, calc(100% - 48px));
-      height: 84px;
-
-      margin: auto;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -.7px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-
-      font-size: 14px;
-    }
-
-    .nav a {
-      opacity: .68;
-      transition:
-        opacity .2s ease,
-        transform .2s ease;
-    }
-
-    .nav a:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-
-    .header-cta {
-      padding: 12px 19px;
-
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 100px;
-
-      opacity: 1 !important;
-
-      transition:
-        background .25s ease,
-        color .25s ease !important;
-    }
-
-    .header-cta:hover {
-      background: #fff;
-      color: #050505;
-    }
-
-
-    /* =========================================
-       HERO
-       ========================================= */
-
-    .hero {
-      position: relative;
-
-      min-height: 100svh;
-
-      display: flex;
-      align-items: center;
-
-      overflow: hidden;
-
-      padding: 150px 0 80px;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 750px;
-      height: 750px;
-
-      top: -270px;
-      right: -200px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255,255,255,.08),
-          transparent 68%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-
-      width: min(1380px, calc(100% - 48px));
-
-      margin: auto;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-
-      margin-bottom: 30px;
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      color: rgba(255,255,255,.48);
-    }
-
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: #fff;
-
-      box-shadow:
-        0 0 18px rgba(255,255,255,.8);
-    }
-
-    .hero h1 {
-      max-width: 1100px;
-
-      font-size: clamp(64px, 9vw, 145px);
-
-      line-height: .88;
-
-      letter-spacing: -7px;
-
-      font-weight: 800;
-    }
-
-    .hero h1 span {
-      color: rgba(255,255,255,.26);
-    }
-
-    .hero-bottom {
-      margin-top: 60px;
-
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-
-      gap: 40px;
-    }
-
-    .hero-copy {
-      max-width: 590px;
-
-      color: rgba(255,255,255,.62);
-
-      font-size: 19px;
-      line-height: 1.6;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-    }
-
-    .btn {
-      min-height: 54px;
-
-      padding: 0 25px;
-
-      border-radius: 100px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 14px;
-      font-weight: 700;
-
-      transition:
-        transform .25s ease,
-        background .25s ease,
-        color .25s ease,
-        border-color .25s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: #f5f5f5;
-      color: #050505;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,.16);
-      color: #fff;
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,.4);
-    }
-
-
-    /* =========================================
-       MARQUEE
-       ========================================= */
-
-    .marquee {
-      overflow: hidden;
-
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-
-      padding: 20px 0;
-    }
-
-    .marquee-track {
-      width: max-content;
-
-      display: flex;
-
-      animation: marquee 25s linear infinite;
-    }
-
-    .marquee-content {
-      display: flex;
-      align-items: center;
-      gap: 35px;
-
-      padding-right: 35px;
-
-      color: rgba(255,255,255,.4);
-
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: 1.4px;
-
-      text-transform: uppercase;
-    }
-
-    .marquee-content b {
-      color: rgba(255,255,255,.85);
-    }
-
-    @keyframes marquee {
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-
-    /* =========================================
-       GENERAL SECTION
-       ========================================= */
-
-    .section {
-      padding: 140px 0;
-    }
-
-    .container {
-      width: min(1380px, calc(100% - 48px));
-      margin: auto;
-    }
-
-    .section-head {
-      display: grid;
-
-      grid-template-columns:
-        minmax(160px, .5fr)
-        1.5fr;
-
-      gap: 60px;
-
-      margin-bottom: 80px;
-    }
-
-    .section-number {
-      color: rgba(255,255,255,.3);
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      max-width: 900px;
-
-      font-size: clamp(40px, 5vw, 76px);
-
-      line-height: 1;
-
-      letter-spacing: -3.5px;
-    }
-
-
-    /* =========================================
-       SERVICES
-       ========================================= */
-
-    .services {
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .service {
-      display: grid;
-
-      grid-template-columns:
-        80px
-        1fr
-        minmax(300px, .65fr)
-        50px;
-
-      gap: 30px;
-
-      align-items: center;
-
-      padding: 35px 0;
-
-      border-bottom: 1px solid rgba(255,255,255,.08);
-
-      transition: padding .25s ease;
-    }
-
-    .service:hover {
-      padding-left: 12px;
-    }
-
-    .service-index {
-      color: rgba(255,255,255,.3);
-
-      font-size: 12px;
-    }
-
-    .service-name {
-      font-size: clamp(25px, 3vw, 44px);
-
-      font-weight: 700;
-
-      letter-spacing: -1.5px;
-    }
-
-    .service-description {
-      color: rgba(255,255,255,.48);
-
-      font-size: 14px;
-
-      line-height: 1.6;
-    }
-
-    .service-arrow {
-      font-size: 25px;
-
-      opacity: .35;
-
-      transition:
-        opacity .25s ease,
-        transform .25s ease;
-    }
-
-    .service:hover .service-arrow {
-      opacity: 1;
-
-      transform: translate(4px, -4px);
-    }
-
-
-    /* =========================================
-       APPROACH
-       ========================================= */
-
-    .approach {
-      background: #f2f2f0;
-      color: #090909;
-    }
-
-    .approach .section-number {
-      color: rgba(0,0,0,.4);
-    }
-
-    .approach-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      border-top: 1px solid rgba(0,0,0,.15);
-    }
-
-    .approach-card {
-      min-height: 340px;
-
-      padding: 35px;
-
-      border-right: 1px solid rgba(0,0,0,.15);
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .approach-card:last-child {
-      border-right: none;
-    }
-
-    .approach-number {
-      color: rgba(0,0,0,.4);
-
-      font-size: 12px;
-    }
-
-    .approach-card h3 {
-      margin-bottom: 15px;
-
-      font-size: 30px;
-
-      letter-spacing: -1.2px;
-    }
-
-    .approach-card p {
-      color: rgba(0,0,0,.55);
-
-      line-height: 1.65;
-
-      font-size: 14px;
-    }
-
-
-    /* =========================================
-       PROJECTS
-       ========================================= */
-
-    .projects {
-      background: #070707;
-    }
-
-    .project-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 16px;
-    }
-
-    .project {
-      position: relative;
-
-      min-height: 520px;
-
-      overflow: hidden;
-
-      border: 1px solid rgba(255,255,255,.08);
-
-      background:
-        linear-gradient(
-          135deg,
-          #161616,
-          #090909
-        );
-    }
-
-    .project:nth-child(2) {
-      background:
-        linear-gradient(
-          135deg,
-          #1d1d1d,
-          #0c0c0c
-        );
-    }
-
-    .project-inner {
-      position: absolute;
-      inset: 0;
-
-      padding: 40px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .project-type {
-      color: rgba(255,255,255,.4);
-
-      font-size: 11px;
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-    }
-
-    .project h3 {
-      font-size: clamp(35px, 4vw, 60px);
-
-      letter-spacing: -2.5px;
-    }
-
-    .project p {
-      margin-top: 12px;
-
-      color: rgba(255,255,255,.5);
-
-      line-height: 1.5;
-    }
-
-
-    /* =========================================
-       CTA
-       ========================================= */
-
-    .cta-section {
-      min-height: 80vh;
-
-      display: flex;
-      align-items: center;
-
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .cta-inner {
-      width: min(1380px, calc(100% - 48px));
-
-      margin: auto;
-
-      text-align: center;
-    }
-
-    .cta-inner p {
-      margin-bottom: 25px;
-
-      color: rgba(255,255,255,.4);
-
-      font-size: 12px;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-    }
-
-    .cta-inner h2 {
-      max-width: 1000px;
-
-      margin: 0 auto 50px;
-
-      font-size: clamp(55px, 8vw, 120px);
-
-      line-height: .92;
-
-      letter-spacing: -6px;
-    }
-
-
-    /* =========================================
-       FOOTER
-       ========================================= */
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-
-      padding: 35px 0;
-    }
-
-    .footer-inner {
-      width: min(1380px, calc(100% - 48px));
-
-      margin: auto;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      color: rgba(255,255,255,.4);
-
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-
-    /* =========================================
-       MOBILE
-       ========================================= */
-
-    @media (max-width: 900px) {
-
-      .header-inner,
-      .hero-inner,
-      .container,
-      .cta-inner,
-      .footer-inner {
-        width: min(100% - 30px, 1380px);
-      }
-
-      .header-inner {
-        height: 70px;
-      }
-
-      .nav a:not(.header-cta) {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
-
-      .hero h1 {
-        letter-spacing: -4px;
-      }
-
-      .hero-bottom {
-        margin-top: 45px;
-
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero-copy {
-        font-size: 17px;
-      }
-
-      .section {
-        padding: 90px 0;
-      }
-
-      .section-head {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-
-        margin-bottom: 55px;
-      }
-
-      .section-title {
-        letter-spacing: -2.5px;
-      }
-
-      .service {
-        grid-template-columns: 40px 1fr 30px;
-
-        gap: 15px;
-
-        padding: 27px 0;
-      }
-
-      .service-description {
-        display: none;
-      }
-
-      .approach-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .approach-card {
-        min-height: 260px;
-
-        border-right: none;
-
-        border-bottom: 1px solid rgba(0,0,0,.15);
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project {
-        min-height: 430px;
-      }
-
-      .cta-inner h2 {
-        letter-spacing: -4px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-
-        gap: 20px;
-      }
-    }
-
-
-    @media (max-width: 520px) {
-
-      .hero h1 {
-        font-size: 58px;
-        letter-spacing: -3.5px;
-      }
-
-      .hero-actions {
-        width: 100%;
-
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .section-title {
-        font-size: 42px;
-      }
-
-      .service-name {
-        font-size: 25px;
-      }
-
-      .project-inner {
-        padding: 27px;
-      }
-
-      .cta-inner h2 {
-        font-size: 54px;
-        letter-spacing: -3px;
-      }
-    }
-
-  </style>
 </head>
 
 
 <body>
 
-  <!-- HEADER -->
 
-  <header class="header">
+  <!-- =========================================
+       HEADER
+  ========================================== -->
 
-    <div class="header-inner">
+  <header class="od-header">
 
-      <a href="#" class="logo">
-        optimiert.digital
+    <div class="od-header__inner">
+
+
+      <!-- LOGO -->
+
+      <a
+        href="index.html"
+        class="od-logo"
+        aria-label="optimiert.digital Startseite"
+      >
+
+        <span
+          class="od-logo__mark"
+          aria-hidden="true"
+        >
+
+          <span class="od-logo__ring"></span>
+
+          <span class="od-logo__line"></span>
+
+        </span>
+
+
+        <span class="od-logo__text">
+          OPTIMIERT.DIGITAL
+        </span>
+
       </a>
 
-      <nav class="nav">
+
+      <!-- DESKTOP NAVIGATION -->
+
+      <nav
+        class="od-header__nav"
+        aria-label="Hauptnavigation"
+      >
 
         <a href="#leistungen">
           Leistungen
@@ -833,75 +95,255 @@
           Projekte
         </a>
 
-        <a href="#prozess">
-          Ablauf
-        </a>
-
-        <a
-          href="mailto:alex@optimiert.digital"
-          class="header-cta"
-        >
-          Projekt starten
+        <a href="#ueber-uns">
+          Über uns
         </a>
 
       </nav>
+
+
+      <!-- DESKTOP CTA -->
+
+      <a
+        href="#kontakt"
+        class="od-header__cta"
+      >
+        Kontakt
+      </a>
+
+
+      <!-- MOBILE MENU BUTTON -->
+
+      <button
+        class="od-menu-button"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <div
+      class="od-mobile-menu"
+      id="mobile-navigation"
+    >
+
+      <a href="#leistungen">
+        Leistungen
+      </a>
+
+      <a href="#projekte">
+        Projekte
+      </a>
+
+      <a href="#ueber-uns">
+        Über uns
+      </a>
+
+      <a
+        href="#kontakt"
+        class="od-mobile-menu__cta"
+      >
+        Kontakt
+
+        <span>
+          →
+        </span>
+
+      </a>
 
     </div>
 
   </header>
 
 
-  <!-- HERO -->
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
 
   <main>
 
-    <section class="hero">
 
-      <div class="hero-inner">
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
-        <div class="eyebrow">
+    <section class="od-hero">
 
-          <span class="eyebrow-dot"></span>
-
-          Websites & digitale Lösungen
-
-        </div>
+      <div class="od-hero__glow"></div>
 
 
-        <h1>
-          Lokal stark.<br>
-          <span>Digital genauso.</span>
-        </h1>
+      <div class="od-container od-hero__inner">
 
 
-        <div class="hero-bottom">
+        <!-- HERO CONTENT -->
 
-          <p class="hero-copy">
-            Wir entwickeln digitale Auftritte für Unternehmen,
-            die nicht einfach nur online sein wollen.
-            Klar konzipiert, individuell gestaltet und auf das
-            Wesentliche optimiert.
+        <div class="od-hero__content">
+
+
+          <p class="od-eyebrow">
+
+            <span class="od-eyebrow__dot"></span>
+
+            DIGITALE LÖSUNGEN FÜR UNTERNEHMEN
+
           </p>
 
 
-          <div class="hero-actions">
+          <h1 class="od-hero__title">
+
+            Lokal stark.
+
+            <span>
+              Digital genauso.
+            </span>
+
+          </h1>
+
+
+          <p class="od-hero__description">
+
+            Websites, Online-Shops und digitale Lösungen,
+            die zu deinem Unternehmen passen – individuell
+            entwickelt, klar umgesetzt und persönlich betreut.
+
+          </p>
+
+
+          <!-- HERO BUTTONS -->
+
+          <div class="od-hero__actions">
 
             <a
-              href="mailto:alex@optimiert.digital"
-              class="btn btn-primary"
+              href="#kontakt"
+              class="od-button od-button--primary"
             >
-              Projekt anfragen →
+
+              Projekt besprechen
+
+              <span>
+                →
+              </span>
+
             </a>
+
 
             <a
               href="#projekte"
-              class="btn btn-secondary"
+              class="od-button od-button--secondary"
             >
+
               Projekte ansehen
+
+              <span>
+                ↓
+              </span>
+
             </a>
 
           </div>
 
+
+          <!-- SMALL TRUST LINE -->
+
+          <div class="od-hero__trust">
+
+            <span class="od-hero__trust-line"></span>
+
+            <p>
+              Persönlich · Individuell · Direkt
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="od-hero__visual">
+
+          <div class="od-hero__visual-glow"></div>
+
+          <img
+            src="assets/hero.png"
+            alt="optimiert.digital – Websites, Online-Shops und digitale Lösungen"
+            class="od-hero__image"
+            width="1536"
+            height="1024"
+            loading="eager"
+            fetchpriority="high"
+          >
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         INTRO / POSITIONIERUNG
+    ========================================== -->
+
+    <section class="od-intro">
+
+      <div class="od-container">
+
+
+        <div class="od-section-label">
+
+          <span></span>
+
+          WAS WIR MACHEN
+
+        </div>
+
+
+        <div class="od-intro__grid">
+
+
+          <h2 class="od-intro__title">
+
+            Dein Unternehmen.
+
+            <span>
+              Digital besser aufgestellt.
+            </span>
+
+          </h2>
+
+
+          <div class="od-intro__content">
+
+            <p class="od-intro__lead">
+              Digital muss nicht kompliziert sein.
+            </p>
+
+            <p>
+              Wir entwickeln digitale Lösungen,
+              die wirklich zu deinem Unternehmen passen.
+              Vom professionellen Webauftritt über
+              E-Commerce bis zu individuellen digitalen
+              Lösungen.
+            </p>
+
+          </div>
+
+
         </div>
 
       </div>
@@ -909,394 +351,920 @@
     </section>
 
 
-    <!-- MARQUEE -->
 
-    <div class="marquee">
-
-      <div class="marquee-track">
-
-        <div class="marquee-content">
-          <b>Webdesign</b> ·
-          Websites ·
-          Online-Shops ·
-          Digitale Lösungen ·
-          Strategie ·
-          <b>optimiert.digital</b> ·
-        </div>
-
-        <div class="marquee-content">
-          <b>Webdesign</b> ·
-          Websites ·
-          Online-Shops ·
-          Digitale Lösungen ·
-          Strategie ·
-          <b>optimiert.digital</b> ·
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- LEISTUNGEN -->
+    <!-- =========================================
+         LEISTUNGEN
+    ========================================== -->
 
     <section
-      class="section"
+      class="od-services"
       id="leistungen"
     >
 
-      <div class="container">
+      <div class="od-container">
 
-        <div class="section-head">
 
-          <div class="section-number">
-            01 / Leistungen
+        <!-- SECTION HEADER -->
+
+        <div class="od-section-header">
+
+          <div class="od-section-label">
+
+            <span></span>
+
+            LEISTUNGEN
+
           </div>
 
-          <h2 class="section-title">
-            Digital dort optimieren,
-            wo es einen Unterschied macht.
+
+          <h2>
+            Was wir digital
+            <span>für dich lösen.</span>
           </h2>
 
         </div>
 
 
-        <div class="services">
 
-          <div class="service">
+        <!-- SERVICES GRID -->
 
-            <div class="service-index">
-              01
+        <div class="od-services__grid">
+
+
+          <!-- WEBSITE -->
+
+          <article class="od-service-card">
+
+
+            <div class="od-service-card__top">
+
+              <span class="od-service-card__number">
+                01
+              </span>
+
+
+              <div class="od-service-card__icon">
+
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  aria-hidden="true"
+                >
+
+                  <rect
+                    x="4"
+                    y="5"
+                    width="24"
+                    height="18"
+                    rx="2.5"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+
+                  <path
+                    d="M10 27H22"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+
+                  <path
+                    d="M16 23V27"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+
+                </svg>
+
+              </div>
+
             </div>
 
-            <div class="service-name">
-              Websites
+
+            <div class="od-service-card__content">
+
+              <h3>
+                Websites
+              </h3>
+
+              <p>
+                Individuelle Websites für Unternehmen,
+                die professionell auftreten und digital
+                überzeugen wollen.
+              </p>
+
             </div>
 
-            <div class="service-description">
-              Individuelle Unternehmenswebsites mit Fokus auf
-              Design, Nutzerführung und einem professionellen
-              digitalen Auftritt.
-            </div>
 
-            <div class="service-arrow">
+            <div class="od-service-card__arrow">
               ↗
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="service">
 
-            <div class="service-index">
-              02
+          <!-- ONLINE SHOP -->
+
+          <article class="od-service-card">
+
+
+            <div class="od-service-card__top">
+
+              <span class="od-service-card__number">
+                02
+              </span>
+
+
+              <div class="od-service-card__icon">
+
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    d="M5 7H8L11 21H25L28 11H10"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <circle
+                    cx="14"
+                    cy="26"
+                    r="1.5"
+                    fill="currentColor"
+                  />
+
+                  <circle
+                    cx="24"
+                    cy="26"
+                    r="1.5"
+                    fill="currentColor"
+                  />
+
+                </svg>
+
+              </div>
+
             </div>
 
-            <div class="service-name">
-              Online-Shops
+
+            <div class="od-service-card__content">
+
+              <h3>
+                Online-Shops
+              </h3>
+
+              <p>
+                Durchdachte E-Commerce-Lösungen für
+                Unternehmen, die Produkte oder
+                Dienstleistungen digital verkaufen.
+              </p>
+
             </div>
 
-            <div class="service-description">
-              Durchdachte E-Commerce-Lösungen für Unternehmen,
-              die Produkte und Dienstleistungen digital verkaufen.
-            </div>
 
-            <div class="service-arrow">
+            <div class="od-service-card__arrow">
               ↗
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="service">
 
-            <div class="service-index">
-              03
+          <!-- DIGITALE LÖSUNGEN -->
+
+          <article class="od-service-card">
+
+
+            <div class="od-service-card__top">
+
+              <span class="od-service-card__number">
+                03
+              </span>
+
+
+              <div class="od-service-card__icon">
+
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  aria-hidden="true"
+                >
+
+                  <circle
+                    cx="8"
+                    cy="8"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+
+                  <circle
+                    cx="24"
+                    cy="16"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+
+                  <circle
+                    cx="8"
+                    cy="24"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+
+                  <path
+                    d="M11 8H17C20.87 8 24 11.13 24 15"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+
+                  <path
+                    d="M21 16H17C12.03 16 8 19.58 8 24"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+
+                </svg>
+
+              </div>
+
             </div>
 
-            <div class="service-name">
-              Digitale Lösungen
+
+            <div class="od-service-card__content">
+
+              <h3>
+                Digitale Lösungen
+              </h3>
+
+              <p>
+                Individuelle digitale Lösungen,
+                die Prozesse vereinfachen und dein
+                Unternehmen sinnvoll unterstützen.
+              </p>
+
             </div>
 
-            <div class="service-description">
-              Individuelle digitale Systeme und Lösungen,
-              abgestimmt auf Prozesse, Anforderungen und Ziele.
-            </div>
 
-            <div class="service-arrow">
+            <div class="od-service-card__arrow">
               ↗
             </div>
 
-          </div>
+          </article>
 
-
-          <div class="service">
-
-            <div class="service-index">
-              04
-            </div>
-
-            <div class="service-name">
-              Betreuung
-            </div>
-
-            <div class="service-description">
-              Weiterentwicklung, Anpassungen und technischer
-              Support auch nach dem Launch.
-            </div>
-
-            <div class="service-arrow">
-              ↗
-            </div>
-
-          </div>
 
         </div>
+
+
+        <!-- SERVICES CTA -->
+
+        <div class="od-services__footer">
+
+          <p>
+            Du weißt noch nicht genau, welche Lösung
+            zu deinem Unternehmen passt?
+          </p>
+
+          <a
+            href="#kontakt"
+            class="od-text-link"
+          >
+
+            Gemeinsam herausfinden
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+        </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- ABLAUF -->
+
+    <!-- =========================================
+         PROJEKTE
+    ========================================== -->
 
     <section
-      class="section approach"
-      id="prozess"
-    >
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-number">
-            02 / Zusammenarbeit
-          </div>
-
-          <h2 class="section-title">
-            Einfacher Prozess.
-            Klare Umsetzung.
-          </h2>
-
-        </div>
-
-
-        <div class="approach-grid">
-
-          <article class="approach-card">
-
-            <div class="approach-number">
-              01
-            </div>
-
-            <div>
-
-              <h3>
-                Verstehen.
-              </h3>
-
-              <p>
-                Wir schauen uns dein Unternehmen,
-                deine aktuelle Situation und das konkrete
-                Ziel des Projekts an.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="approach-card">
-
-            <div class="approach-number">
-              02
-            </div>
-
-            <div>
-
-              <h3>
-                Entwickeln.
-              </h3>
-
-              <p>
-                Daraus entsteht ein individueller digitaler
-                Auftritt – von der Struktur bis zum finalen
-                Design.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="approach-card">
-
-            <div class="approach-number">
-              03
-            </div>
-
-            <div>
-
-              <h3>
-                Optimieren.
-              </h3>
-
-              <p>
-                Nach dem Launch bleiben wir Ansprechpartner
-                und entwickeln die Lösung bei Bedarf weiter.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROJEKTE -->
-
-    <section
-      class="section projects"
+      class="od-projects"
       id="projekte"
     >
 
-      <div class="container">
+      <div class="od-container">
 
-        <div class="section-head">
 
-          <div class="section-number">
-            03 / Projekte
+        <div class="od-section-header">
+
+          <div class="od-section-label">
+
+            <span></span>
+
+            AUSGEWÄHLTE PROJEKTE
+
           </div>
 
-          <h2 class="section-title">
-            Ausgewählte Arbeiten.
+
+          <h2>
+            Nicht nur zeigen.
+            <span>Umsetzen.</span>
           </h2>
 
         </div>
 
 
-        <div class="project-grid">
 
-          <article class="project">
+        <div class="od-projects__grid">
 
-            <div class="project-inner">
 
-              <div class="project-type">
-                Immobilien / Webdesign
+          <!-- MBC -->
+
+          <article class="od-project-card">
+
+            <div class="od-project-card__visual">
+
+              <div class="od-project-card__placeholder">
+
+                <span>
+                  MBC
+                </span>
+
               </div>
 
+            </div>
+
+
+            <div class="od-project-card__info">
+
               <div>
+
+                <p class="od-project-card__category">
+                  Immobilien · Webdesign
+                </p>
 
                 <h3>
                   mbc Immobilien
                 </h3>
 
-                <p>
-                  Digitaler Unternehmensauftritt mit
-                  Immobilien- und Exposé-Struktur.
-                </p>
-
               </div>
+
+
+              <span class="od-project-card__arrow">
+                ↗
+              </span>
 
             </div>
 
           </article>
 
 
-          <article class="project">
 
-            <div class="project-inner">
+          <!-- JM -->
 
-              <div class="project-type">
-                Barber / Webdesign
+          <article class="od-project-card">
+
+            <div class="od-project-card__visual">
+
+              <div class="od-project-card__placeholder">
+
+                <span>
+                  JM
+                </span>
+
               </div>
 
+            </div>
+
+
+            <div class="od-project-card__info">
+
               <div>
+
+                <p class="od-project-card__category">
+                  Barber · Webdesign
+                </p>
 
                 <h3>
                   JM Barbershop
                 </h3>
 
-                <p>
-                  Moderner lokaler Webauftritt für
-                  mehrere Standorte.
-                </p>
-
               </div>
+
+
+              <span class="od-project-card__arrow">
+                ↗
+              </span>
 
             </div>
 
           </article>
 
+
         </div>
+
+
+        <div class="od-projects__bottom">
+
+          <p>
+            Unterschiedliche Unternehmen.
+            Unterschiedliche Anforderungen.
+            Individuelle Lösungen.
+          </p>
+
+        </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- CTA -->
 
-    <section class="cta-section">
+    <!-- =========================================
+         ÜBER UNS / ANSATZ
+    ========================================== -->
 
-      <div class="cta-inner">
+    <section
+      class="od-approach"
+      id="ueber-uns"
+    >
 
-        <p>
-          Dein Unternehmen. Digital optimiert.
+      <div class="od-approach__glow"></div>
+
+
+      <div class="od-container">
+
+
+        <div class="od-section-label">
+
+          <span></span>
+
+          UNSER ANSATZ
+
+        </div>
+
+
+
+        <div class="od-approach__main">
+
+
+          <h2>
+
+            Digital.
+
+            <span>
+              Einfach.
+            </span>
+
+            Optimiert.
+
+          </h2>
+
+
+
+          <div class="od-approach__copy">
+
+            <strong>
+              Kein unnötiger Agentur-Ballast.
+            </strong>
+
+            <p>
+              Klare Kommunikation, kurze Wege und
+              Lösungen, die wirklich zu deinem
+              Unternehmen passen.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- PRINCIPLES -->
+
+        <div class="od-principles">
+
+
+          <article class="od-principle">
+
+            <span class="od-principle__number">
+              01
+            </span>
+
+            <h3>
+              Direkt.
+            </h3>
+
+            <p>
+              Persönliche Zusammenarbeit und
+              klare Kommunikation ohne unnötige
+              Umwege.
+            </p>
+
+          </article>
+
+
+
+          <article class="od-principle">
+
+            <span class="od-principle__number">
+              02
+            </span>
+
+            <h3>
+              Individuell.
+            </h3>
+
+            <p>
+              Keine Lösungen von der Stange.
+              Wir bauen das, was dein Unternehmen
+              wirklich braucht.
+            </p>
+
+          </article>
+
+
+
+          <article class="od-principle">
+
+            <span class="od-principle__number">
+              03
+            </span>
+
+            <h3>
+              Durchdacht.
+            </h3>
+
+            <p>
+              Design, Technik und Prozesse
+              greifen sinnvoll ineinander.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROCESS
+    ========================================== -->
+
+    <section class="od-process">
+
+      <div class="od-container">
+
+
+        <div class="od-section-header">
+
+          <div class="od-section-label">
+
+            <span></span>
+
+            ZUSAMMENARBEIT
+
+          </div>
+
+
+          <h2>
+            Von der Idee
+            <span>bis zum Launch.</span>
+          </h2>
+
+        </div>
+
+
+
+        <div class="od-process__steps">
+
+
+          <article class="od-process-step">
+
+            <span>
+              01
+            </span>
+
+            <div>
+
+              <h3>
+                Verstehen
+              </h3>
+
+              <p>
+                Wir sprechen über dein Unternehmen,
+                deine aktuelle Situation und dein Ziel.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="od-process-step">
+
+            <span>
+              02
+            </span>
+
+            <div>
+
+              <h3>
+                Entwickeln
+              </h3>
+
+              <p>
+                Wir entwickeln eine Lösung,
+                die genau zu deinen Anforderungen
+                passt.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="od-process-step">
+
+            <span>
+              03
+            </span>
+
+            <div>
+
+              <h3>
+                Umsetzen
+              </h3>
+
+              <p>
+                Design, Technik und Inhalte
+                werden sauber zusammengeführt.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="od-process-step">
+
+            <span>
+              04
+            </span>
+
+            <div>
+
+              <h3>
+                Weiterdenken
+              </h3>
+
+              <p>
+                Auch nach dem Launch bleiben
+                wir Ansprechpartner und entwickeln
+                deine Lösung weiter.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FINAL CTA
+    ========================================== -->
+
+    <section
+      class="od-contact"
+      id="kontakt"
+    >
+
+      <div class="od-contact__glow"></div>
+
+
+      <div class="od-container od-contact__inner">
+
+
+        <p class="od-contact__eyebrow">
+          BEREIT FÜR DEN NÄCHSTEN SCHRITT?
         </p>
 
+
         <h2>
-          Lass uns etwas
-          Starkes bauen.
+
+          Lass uns dein Unternehmen
+
+          <span>
+            digital optimieren.
+          </span>
+
         </h2>
+
+
+        <p class="od-contact__description">
+
+          Erzähl uns kurz, wo du aktuell stehst
+          und was du digital verbessern möchtest.
+
+        </p>
+
 
         <a
           href="mailto:alex@optimiert.digital"
-          class="btn btn-primary"
+          class="od-button od-button--primary od-contact__button"
         >
-          Projekt besprechen →
+
+          Projekt besprechen
+
+          <span>
+            →
+          </span>
+
         </a>
+
+
+        <a
+          href="mailto:alex@optimiert.digital"
+          class="od-contact__email"
+        >
+          alex@optimiert.digital
+        </a>
+
 
       </div>
 
     </section>
+
 
   </main>
 
 
-  <!-- FOOTER -->
 
-  <footer>
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
 
-    <div class="footer-inner">
+  <footer class="od-footer">
 
-      <div>
-        © 2026 optimiert.digital
+    <div class="od-container od-footer__top">
+
+
+      <!-- BRAND -->
+
+      <div class="od-footer__brand">
+
+
+        <a
+          href="index.html"
+          class="od-logo"
+          aria-label="optimiert.digital Startseite"
+        >
+
+          <span
+            class="od-logo__mark"
+            aria-hidden="true"
+          >
+
+            <span class="od-logo__ring"></span>
+
+            <span class="od-logo__line"></span>
+
+          </span>
+
+
+          <span class="od-logo__text">
+            OPTIMIERT.DIGITAL
+          </span>
+
+        </a>
+
+
+        <p>
+          Websites, Online-Shops und digitale Lösungen
+          für Unternehmen.
+        </p>
+
+
       </div>
 
-      <div class="footer-links">
 
-        <a href="mailto:alex@optimiert.digital">
+
+      <!-- NAVIGATION -->
+
+      <div class="od-footer__column">
+
+        <p class="od-footer__heading">
+          Navigation
+        </p>
+
+        <a href="#leistungen">
+          Leistungen
+        </a>
+
+        <a href="#projekte">
+          Projekte
+        </a>
+
+        <a href="#ueber-uns">
+          Über uns
+        </a>
+
+        <a href="#kontakt">
           Kontakt
         </a>
 
-        <a href="/impressum.html">
+      </div>
+
+
+
+      <!-- LEGAL -->
+
+      <div class="od-footer__column">
+
+        <p class="od-footer__heading">
+          Rechtliches
+        </p>
+
+        <a href="impressum.html">
           Impressum
         </a>
 
-        <a href="/datenschutz.html">
+        <a href="datenschutz.html">
           Datenschutz
         </a>
 
+        <a href="agb.html">
+          AGB
+        </a>
+
       </div>
+
+
+    </div>
+
+
+
+    <div class="od-container od-footer__bottom">
+
+      <p>
+        © <span id="current-year">2026</span>
+        optimiert.digital
+      </p>
+
+
+      <p>
+        Digital. Einfach. Optimiert.
+      </p>
 
     </div>
 
   </footer>
 
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script
+    src="js/main.js"
+    defer
+  ></script>
+
+
 </body>
+
 </html>
