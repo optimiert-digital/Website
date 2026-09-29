@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
@@ -17,13 +11,9 @@
 
   <meta name="theme-color" content="#000000">
 
-  <title>
-    optimiert.digital | Websites & digitale Lösungen
-  </title>
-
+  <title>optimiert.digital | Websites & digitale Lösungen</title>
 
   <style>
-
     /* =====================================================
        OPTIMIERT.DIGITAL
        ===================================================== */
@@ -31,24 +21,17 @@
     :root {
       --blue: #1463ff;
       --blue-light: #337cff;
-
       --black: #000000;
       --background: #050505;
       --surface: #090909;
-
       --white: #ffffff;
       --text: #f5f5f5;
       --muted: #858585;
-
       --border: rgba(255,255,255,.09);
-
       --container: 1400px;
     }
 
-
-    /* =====================================================
-       RESET
-       ===================================================== */
+    /* RESET */
 
     *,
     *::before,
@@ -63,15 +46,9 @@
 
     body {
       margin: 0;
-
       background: var(--background);
       color: var(--text);
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      font-family: Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -99,20 +76,12 @@
       color: #ffffff;
     }
 
-
-    /* =====================================================
-       CONTAINER
-       ===================================================== */
+    /* CONTAINER */
 
     .container {
-      width: min(
-        var(--container),
-        calc(100% - 96px)
-      );
-
+      width: min(var(--container), calc(100% - 96px));
       margin: 0 auto;
     }
-
 
     /* =====================================================
        HEADER
@@ -120,94 +89,59 @@
 
     .header {
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
       width: 100%;
-
-      background:
-        rgba(0,0,0,.92);
-
-      border-bottom:
-        1px solid var(--border);
-
-      backdrop-filter:
-        blur(18px);
-
-      -webkit-backdrop-filter:
-        blur(18px);
+      background: rgba(0,0,0,.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transition:
+        background .25s ease,
+        box-shadow .25s ease;
     }
 
     .header.scrolled {
-      background:
-        rgba(0,0,0,.97);
-
-      box-shadow:
-        0 15px 40px rgba(0,0,0,.28);
+      background: rgba(0,0,0,.97);
+      box-shadow: 0 15px 40px rgba(0,0,0,.28);
     }
 
     .header-inner {
-      width: min(
-        1500px,
-        calc(100% - 64px)
-      );
-
+      width: min(1500px, calc(100% - 64px));
       min-height: 82px;
-
       margin: 0 auto;
 
       display: grid;
-
-      grid-template-columns:
-        1fr
-        auto
-        1fr;
-
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-
       gap: 30px;
     }
 
-
-    /* =====================================================
-       LOGO
-       ===================================================== */
+    /* LOGO */
 
     .logo {
       width: fit-content;
-
       display: inline-flex;
-
       align-items: center;
-
       gap: 12px;
     }
 
     .logo-mark {
       position: relative;
-
       width: 38px;
       height: 38px;
-
       flex: 0 0 38px;
     }
 
     .logo-ring {
       position: absolute;
-
       inset: 5px;
-
-      border:
-        4px solid #ffffff;
-
+      border: 4px solid #ffffff;
       border-radius: 50%;
     }
 
     .logo-line {
       position: absolute;
-
       top: 17px;
       left: 0;
 
@@ -215,12 +149,9 @@
       height: 3px;
 
       border-radius: 10px;
+      background: var(--blue);
 
-      background:
-        var(--blue);
-
-      transform:
-        rotate(-45deg);
+      transform: rotate(-45deg);
 
       box-shadow:
         0 0 16px rgba(20,99,255,.55);
@@ -228,62 +159,41 @@
 
     .logo-text {
       color: #ffffff;
-
       font-size: 14px;
-
       line-height: 1;
-
       font-weight: 700;
-
       letter-spacing: .09em;
-
       white-space: nowrap;
     }
 
-
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
+    /* NAV */
 
     .nav {
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       gap: 50px;
     }
 
     .nav a {
       position: relative;
-
       color: #aaaaaa;
-
       font-size: 14px;
-
       font-weight: 500;
-
-      transition:
-        color .2s ease;
+      transition: color .2s ease;
     }
 
     .nav a::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 100%;
-
       bottom: -9px;
 
       height: 1px;
+      background: var(--blue);
 
-      background:
-        var(--blue);
-
-      transition:
-        right .25s ease;
+      transition: right .25s ease;
     }
 
     .nav a:hover {
@@ -294,21 +204,15 @@
       right: 0;
     }
 
-
-    /* =====================================================
-       HEADER CTA
-       ===================================================== */
+    /* HEADER CTA */
 
     .header-cta {
       justify-self: end;
 
       min-height: 42px;
-
-      padding:
-        0 22px;
+      padding: 0 22px;
 
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
 
@@ -324,7 +228,6 @@
       color: #ffffff;
 
       font-size: 14px;
-
       font-weight: 600;
 
       box-shadow:
@@ -336,17 +239,13 @@
     }
 
     .header-cta:hover {
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       box-shadow:
         0 10px 34px rgba(20,99,255,.34);
     }
 
-
-    /* =====================================================
-       MOBILE MENU BUTTON
-       ===================================================== */
+    /* MOBILE BUTTON */
 
     .menu-button {
       display: none;
@@ -355,11 +254,8 @@
       height: 44px;
 
       padding: 0;
-
       border: 0;
-
-      background:
-        transparent;
+      background: transparent;
 
       cursor: pointer;
     }
@@ -369,42 +265,29 @@
       height: 2px;
 
       display: block;
-
-      margin:
-        6px auto;
+      margin: 6px auto;
 
       border-radius: 10px;
+      background: #ffffff;
 
-      background:
-        #ffffff;
-
-      transition:
-        transform .25s ease;
+      transition: transform .25s ease;
     }
 
-    .menu-button.open
-    span:first-child {
+    .menu-button.open span:first-child {
       transform:
         translateY(4px)
         rotate(45deg);
     }
 
-    .menu-button.open
-    span:last-child {
+    .menu-button.open span:last-child {
       transform:
         translateY(-4px)
         rotate(-45deg);
     }
 
-
-    /* =====================================================
-       MOBILE MENU
-       ===================================================== */
-
     .mobile-menu {
       display: none;
     }
-
 
     /* =====================================================
        GENERAL
@@ -412,9 +295,7 @@
 
     .section-label {
       display: flex;
-
       align-items: center;
-
       gap: 10px;
 
       margin: 0;
@@ -422,11 +303,8 @@
       color: #777777;
 
       font-size: 11px;
-
       font-weight: 700;
-
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
@@ -439,9 +317,7 @@
       flex: 0 0 6px;
 
       border-radius: 50%;
-
-      background:
-        var(--blue);
+      background: var(--blue);
 
       box-shadow:
         0 0 14px rgba(20,99,255,.85);
@@ -450,8 +326,7 @@
     .section-heading {
       max-width: 900px;
 
-      margin:
-        28px 0 0;
+      margin: 28px 0 0;
 
       color: #ffffff;
 
@@ -459,9 +334,7 @@
         clamp(48px,5.5vw,82px);
 
       line-height: .96;
-
       letter-spacing: -.05em;
-
       font-weight: 700;
     }
 
@@ -469,19 +342,13 @@
       color: var(--blue);
     }
 
-
-    /* =====================================================
-       BUTTONS
-       ===================================================== */
+    /* BUTTONS */
 
     .button {
       min-height: 56px;
-
-      padding:
-        0 24px;
+      padding: 0 24px;
 
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
 
@@ -490,7 +357,6 @@
       border-radius: 10px;
 
       font-size: 15px;
-
       font-weight: 600;
 
       transition:
@@ -501,18 +367,15 @@
     }
 
     .button span {
-      transition:
-        transform .25s ease;
+      transition: transform .25s ease;
     }
 
     .button:hover {
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
     }
 
     .button:hover span {
-      transform:
-        translateX(3px);
+      transform: translateX(3px);
     }
 
     .button-primary {
@@ -549,7 +412,6 @@
       background:
         rgba(255,255,255,.05);
     }
-
 
     /* =====================================================
        HERO
@@ -599,14 +461,12 @@
 
     .hero-inner {
       position: relative;
-
       z-index: 2;
 
       min-height:
         calc(100svh - 82px);
 
-      padding:
-        65px 0;
+      padding: 65px 0;
 
       display: grid;
 
@@ -619,14 +479,8 @@
       gap: 45px;
     }
 
-
-    /* =====================================================
-       HERO CONTENT
-       ===================================================== */
-
     .hero-content {
       position: relative;
-
       z-index: 5;
 
       max-width: 680px;
@@ -634,23 +488,18 @@
 
     .hero-eyebrow {
       display: flex;
-
       align-items: center;
 
       gap: 10px;
 
-      margin:
-        0 0 24px;
+      margin: 0 0 24px;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 11px;
-
       font-weight: 700;
 
       letter-spacing: .14em;
-
       text-transform: uppercase;
     }
 
@@ -662,8 +511,7 @@
 
       border-radius: 50%;
 
-      background:
-        var(--blue);
+      background: var(--blue);
 
       box-shadow:
         0 0 14px rgba(20,99,255,.9);
@@ -678,7 +526,6 @@
         clamp(62px,5.7vw,92px);
 
       line-height: .93;
-
       letter-spacing: -.055em;
 
       font-weight: 700;
@@ -686,22 +533,17 @@
 
     .hero h1 span {
       display: block;
-
-      color:
-        var(--blue);
+      color: var(--blue);
     }
 
     .hero-description {
       max-width: 610px;
 
-      margin:
-        30px 0 0;
+      margin: 30px 0 0;
 
-      color:
-        #999999;
+      color: #999999;
 
       font-size: 18px;
-
       line-height: 1.7;
     }
 
@@ -709,7 +551,6 @@
       margin-top: 35px;
 
       display: flex;
-
       flex-wrap: wrap;
 
       gap: 14px;
@@ -719,7 +560,6 @@
       margin-top: 40px;
 
       display: flex;
-
       align-items: center;
 
       gap: 15px;
@@ -727,11 +567,9 @@
       color: #656565;
 
       font-size: 10px;
-
       font-weight: 600;
 
       letter-spacing: .11em;
-
       text-transform: uppercase;
     }
 
@@ -741,14 +579,10 @@
       width: 34px;
       height: 1px;
 
-      background:
-        var(--blue);
+      background: var(--blue);
     }
 
-
-    /* =====================================================
-       HERO IMAGE
-       ===================================================== */
+    /* HERO IMAGE */
 
     .hero-visual {
       position: relative;
@@ -756,7 +590,6 @@
       min-height: 650px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
     }
@@ -767,7 +600,6 @@
       position: absolute;
 
       width: 70%;
-
       aspect-ratio: 1;
 
       border-radius: 50%;
@@ -783,11 +615,9 @@
 
     .hero-image {
       position: relative;
-
       z-index: 2;
 
       width: 120%;
-
       max-width: none;
 
       height: auto;
@@ -818,17 +648,14 @@
         );
     }
 
-
     /* =====================================================
        INTRO
        ===================================================== */
 
     .intro {
-      padding:
-        135px 0;
+      padding: 135px 0;
 
-      background:
-        #000000;
+      background: #000000;
 
       border-bottom:
         1px solid var(--border);
@@ -859,7 +686,6 @@
         clamp(54px,6vw,96px);
 
       line-height: .92;
-
       letter-spacing: -.055em;
 
       font-weight: 700;
@@ -867,9 +693,7 @@
 
     .intro h2 span {
       display: block;
-
-      color:
-        var(--blue);
+      color: var(--blue);
     }
 
     .intro-copy strong {
@@ -880,7 +704,6 @@
       color: #ffffff;
 
       font-size: 20px;
-
       line-height: 1.4;
     }
 
@@ -892,21 +715,17 @@
       color: #858585;
 
       font-size: 15px;
-
       line-height: 1.75;
     }
-
 
     /* =====================================================
        SERVICES
        ===================================================== */
 
     .services {
-      padding:
-        125px 0;
+      padding: 125px 0;
 
-      background:
-        #050505;
+      background: #050505;
 
       border-bottom:
         1px solid var(--border);
@@ -935,9 +754,7 @@
       padding: 34px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: space-between;
 
       overflow: hidden;
@@ -991,14 +808,12 @@
 
     .service-icon {
       position: relative;
-
       z-index: 2;
 
       width: 54px;
       height: 54px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -1010,8 +825,7 @@
       background:
         rgba(20,99,255,.04);
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       transition:
         transform .3s ease,
@@ -1019,8 +833,7 @@
         border-color .3s ease;
     }
 
-    .service:hover
-    .service-icon {
+    .service:hover .service-icon {
       transform:
         translateY(-4px);
 
@@ -1038,18 +851,15 @@
 
     .service-content {
       position: relative;
-
       z-index: 2;
     }
 
     .service h3 {
-      margin:
-        0 0 14px;
+      margin: 0 0 14px;
 
       color: #ffffff;
 
       font-size: 29px;
-
       letter-spacing: -.03em;
     }
 
@@ -1061,10 +871,8 @@
       color: #777777;
 
       font-size: 14px;
-
       line-height: 1.7;
     }
-
 
     /* =====================================================
        APPROACH
@@ -1073,13 +881,11 @@
     .approach {
       position: relative;
 
-      padding:
-        140px 0;
+      padding: 140px 0;
 
       overflow: hidden;
 
-      background:
-        #000000;
+      background: #000000;
 
       border-bottom:
         1px solid var(--border);
@@ -1110,7 +916,6 @@
 
     .approach-inner {
       position: relative;
-
       z-index: 2;
     }
 
@@ -1139,15 +944,13 @@
         clamp(60px,7vw,108px);
 
       line-height: .9;
-
       letter-spacing: -.06em;
 
       font-weight: 700;
     }
 
     .approach h2 span {
-      color:
-        var(--blue);
+      color: var(--blue);
     }
 
     .approach-copy strong {
@@ -1158,7 +961,6 @@
       color: #ffffff;
 
       font-size: 20px;
-
       line-height: 1.4;
     }
 
@@ -1170,7 +972,6 @@
       color: #808080;
 
       font-size: 15px;
-
       line-height: 1.75;
     }
 
@@ -1195,9 +996,7 @@
       padding: 34px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: flex-end;
 
       transition:
@@ -1215,13 +1014,11 @@
     }
 
     .principle h3 {
-      margin:
-        0 0 12px;
+      margin: 0 0 12px;
 
       color: #ffffff;
 
       font-size: 24px;
-
       letter-spacing: -.025em;
     }
 
@@ -1233,21 +1030,17 @@
       color: #737373;
 
       font-size: 14px;
-
       line-height: 1.7;
     }
-
 
     /* =====================================================
        PROCESS
        ===================================================== */
 
     .process {
-      padding:
-        130px 0;
+      padding: 130px 0;
 
-      background:
-        #050505;
+      background: #050505;
 
       border-bottom:
         1px solid var(--border);
@@ -1263,8 +1056,7 @@
     .process-item {
       min-height: 145px;
 
-      padding:
-        32px 0;
+      padding: 32px 0;
 
       display: grid;
 
@@ -1314,10 +1106,8 @@
       color: #777777;
 
       font-size: 14px;
-
       line-height: 1.7;
     }
-
 
     /* =====================================================
        CONTACT
@@ -1329,13 +1119,11 @@
       min-height: 700px;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
 
-      background:
-        #000000;
+      background: #000000;
 
       border-bottom:
         1px solid var(--border);
@@ -1366,24 +1154,19 @@
 
     .contact-inner {
       position: relative;
-
       z-index: 2;
 
-      padding:
-        110px 0;
+      padding: 110px 0;
 
       text-align: center;
     }
 
     .contact-label {
-      margin:
-        0 0 25px;
+      margin: 0 0 25px;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 11px;
-
       font-weight: 700;
 
       letter-spacing: .15em;
@@ -1392,8 +1175,7 @@
     .contact h2 {
       max-width: 1050px;
 
-      margin:
-        0 auto;
+      margin: 0 auto;
 
       color: #ffffff;
 
@@ -1401,7 +1183,6 @@
         clamp(58px,7vw,110px);
 
       line-height: .92;
-
       letter-spacing: -.06em;
 
       font-weight: 700;
@@ -1409,21 +1190,17 @@
 
     .contact h2 span {
       display: block;
-
-      color:
-        var(--blue);
+      color: var(--blue);
     }
 
     .contact-description {
       max-width: 550px;
 
-      margin:
-        30px auto 0;
+      margin: 30px auto 0;
 
       color: #858585;
 
       font-size: 17px;
-
       line-height: 1.7;
     }
 
@@ -1434,8 +1211,7 @@
     .contact-email {
       width: fit-content;
 
-      margin:
-        25px auto 0;
+      margin: 25px auto 0;
 
       display: block;
 
@@ -1451,26 +1227,23 @@
       color: #ffffff;
     }
 
-
     /* =====================================================
        FOOTER
        ===================================================== */
 
     .footer {
-      background:
-        #000000;
+      background: #000000;
     }
 
     .footer-main {
-      padding:
-        70px 0 60px;
+      padding: 70px 0 60px;
 
       display: grid;
 
       grid-template-columns:
         1.5fr
         .7fr
-        .7fr;
+        .9fr;
 
       gap: 80px;
     }
@@ -1478,21 +1251,17 @@
     .footer-brand p {
       max-width: 390px;
 
-      margin:
-        24px 0 0;
+      margin: 24px 0 0;
 
       color: #727272;
 
       font-size: 14px;
-
       line-height: 1.7;
     }
 
     .footer-column {
       display: flex;
-
       flex-direction: column;
-
       align-items: flex-start;
 
       gap: 14px;
@@ -1504,13 +1273,12 @@
       color: #ffffff;
 
       font-size: 11px;
-
       letter-spacing: .12em;
 
       text-transform: uppercase;
     }
 
-    .footer-column a {
+    .footer-column > a:not(.footer-email-button) {
       color: #777777;
 
       font-size: 13px;
@@ -1520,18 +1288,80 @@
         transform .2s ease;
     }
 
-    .footer-column a:hover {
+    .footer-column > a:not(.footer-email-button):hover {
       color: #ffffff;
 
       transform:
         translateX(2px);
     }
 
+    /* FOOTER EMAIL BUTTON */
+
+    .footer-email-button {
+      min-height: 46px;
+
+      margin-top: 14px;
+
+      padding: 0 17px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+
+      border:
+        1px solid rgba(20,99,255,.35);
+
+      border-radius: 9px;
+
+      background:
+        rgba(20,99,255,.06);
+
+      color: #ffffff;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      white-space: nowrap;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .footer-email-button span {
+      color: var(--blue);
+
+      transition:
+        transform .25s ease;
+    }
+
+    .footer-email-button:hover {
+      transform:
+        translateY(-2px);
+
+      background:
+        rgba(20,99,255,.12);
+
+      border-color:
+        var(--blue);
+
+      box-shadow:
+        0 8px 30px rgba(20,99,255,.12);
+    }
+
+    .footer-email-button:hover span {
+      transform:
+        translateX(3px);
+    }
+
     .footer-bottom {
       min-height: 80px;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
@@ -1547,13 +1377,11 @@
       color: #565656;
 
       font-size: 11px;
-
       letter-spacing: .04em;
     }
 
-
     /* =====================================================
-       REVEAL
+       SCROLL REVEAL
        ===================================================== */
 
     .reveal {
@@ -1574,7 +1402,6 @@
         translateY(0);
     }
 
-
     /* =====================================================
        TABLET
        ===================================================== */
@@ -1590,13 +1417,10 @@
         width:
           calc(100% - 48px);
 
-        min-height:
-          74px;
+        min-height: 74px;
 
         display: flex;
-
-        justify-content:
-          space-between;
+        justify-content: space-between;
       }
 
       .nav,
@@ -1634,8 +1458,7 @@
       }
 
       .mobile-menu > a {
-        padding:
-          18px 2px;
+        padding: 18px 2px;
 
         color: #eeeeee;
 
@@ -1650,16 +1473,13 @@
 
         margin-top: 22px;
 
-        padding:
-          0 18px;
+        padding: 0 18px;
 
         display: flex;
-
         align-items: center;
         justify-content: space-between;
 
         border: 0;
-
         border-radius: 10px;
 
         background:
@@ -1679,11 +1499,9 @@
       .hero-inner {
         min-height: auto;
 
-        padding:
-          85px 0 45px;
+        padding: 85px 0 45px;
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 25px;
       }
@@ -1703,15 +1521,13 @@
 
       .intro-grid,
       .approach-main {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 45px;
       }
 
       .services-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .service {
@@ -1725,8 +1541,10 @@
           1px solid var(--border);
       }
 
+      .footer-main {
+        gap: 50px;
+      }
     }
-
 
     /* =====================================================
        MOBILE
@@ -1747,8 +1565,7 @@
         width:
           calc(100% - 32px);
 
-        min-height:
-          68px;
+        min-height: 68px;
       }
 
       .logo {
@@ -1764,7 +1581,6 @@
 
       .logo-ring {
         inset: 4px;
-
         border-width: 3px;
       }
 
@@ -1785,7 +1601,6 @@
         padding:
           15px 20px 22px;
       }
-
 
       /* HERO */
 
@@ -1813,7 +1628,6 @@
         margin-top: 23px;
 
         font-size: 16px;
-
         line-height: 1.65;
       }
 
@@ -1821,9 +1635,7 @@
         margin-top: 28px;
 
         display: grid;
-
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 11px;
       }
@@ -1833,8 +1645,7 @@
 
         min-height: 54px;
 
-        justify-content:
-          space-between;
+        justify-content: space-between;
       }
 
       .hero-note {
@@ -1852,10 +1663,8 @@
 
       .hero-image {
         width: 120%;
-
         transform: none;
       }
-
 
       /* INTRO */
 
@@ -1883,7 +1692,6 @@
         font-size: 14px;
       }
 
-
       /* GENERAL */
 
       .section-heading {
@@ -1892,7 +1700,6 @@
         font-size:
           clamp(43px,13vw,62px);
       }
-
 
       /* SERVICES */
 
@@ -1921,7 +1728,6 @@
 
         font-size: 13px;
       }
-
 
       /* APPROACH */
 
@@ -1952,8 +1758,7 @@
       .principles {
         margin-top: 55px;
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .principle {
@@ -1969,7 +1774,6 @@
         border-bottom:
           1px solid var(--border);
       }
-
 
       /* PROCESS */
 
@@ -1988,8 +1792,7 @@
         padding:
           28px 0;
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 12px;
       }
@@ -2005,7 +1808,6 @@
       .process-item p {
         font-size: 13px;
       }
-
 
       /* CONTACT */
 
@@ -2031,24 +1833,24 @@
         max-width: 420px;
       }
 
-
       /* FOOTER */
 
       .footer-main {
         padding:
           58px 0 48px;
 
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
+        grid-template-columns: 1fr;
 
-        column-gap: 30px;
-
-        row-gap: 48px;
+        gap: 45px;
       }
 
       .footer-brand {
-        grid-column:
-          1 / -1;
+        grid-column: auto;
+      }
+
+      .footer-email-button {
+        width: 100%;
+        max-width: 330px;
       }
 
       .footer-bottom {
@@ -2056,27 +1858,45 @@
 
         padding:
           24px 0;
+
+        gap: 20px;
       }
 
       .footer-bottom p {
         font-size: 10px;
       }
 
-      .footer-bottom
-      p:last-child {
+      .footer-bottom p:last-child {
         text-align: right;
       }
-
     }
 
+    /* =====================================================
+       SMALL MOBILE
+       ===================================================== */
+
+    @media screen and (max-width: 420px) {
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-bottom p:last-child {
+        text-align: left;
+      }
+
+      .footer-email-button {
+        font-size: 12px;
+      }
+    }
 
     /* =====================================================
        REDUCED MOTION
        ===================================================== */
 
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
+    @media (prefers-reduced-motion: reduce) {
 
       html {
         scroll-behavior: auto;
@@ -2090,19 +1910,13 @@
 
       .reveal {
         opacity: 1;
-
         transform: none;
       }
-
     }
-
   </style>
-
 </head>
 
-
 <body>
-
 
   <!-- ===================================================
        HEADER
@@ -2112,29 +1926,22 @@
 
     <div class="header-inner">
 
-
       <a
-        href="#top"
+        href="index.html"
         class="logo"
-        aria-label="optimiert.digital"
+        aria-label="optimiert.digital Startseite"
       >
-
         <span
           class="logo-mark"
           aria-hidden="true"
         >
-
           <span class="logo-ring"></span>
-
           <span class="logo-line"></span>
-
         </span>
-
 
         <span class="logo-text">
           OPTIMIERT.DIGITAL
         </span>
-
       </a>
 
 
@@ -2142,24 +1949,22 @@
         class="nav"
         aria-label="Hauptnavigation"
       >
-
-        <a href="#leistungen">
+        <a href="leistungen.html">
           Leistungen
         </a>
 
-        <a href="#ansatz">
-          Über uns
-        </a>
-
-        <a href="#prozess">
+        <a href="prozess.html">
           Prozess
         </a>
 
+        <a href="about.html">
+          Über uns
+        </a>
       </nav>
 
 
       <a
-        href="#kontakt"
+        href="kontakt.html"
         class="header-cta"
       >
         Kontakt
@@ -2172,35 +1977,34 @@
         aria-label="Menü öffnen"
         aria-expanded="false"
       >
-
         <span></span>
         <span></span>
-
       </button>
 
     </div>
 
 
+    <!-- MOBILE MENU -->
+
     <div class="mobile-menu">
 
-      <a href="#leistungen">
+      <a href="leistungen.html">
         Leistungen
       </a>
 
-      <a href="#ansatz">
-        Über uns
-      </a>
-
-      <a href="#prozess">
+      <a href="prozess.html">
         Prozess
       </a>
 
+      <a href="about.html">
+        Über uns
+      </a>
+
       <a
-        href="#kontakt"
+        href="kontakt.html"
         class="mobile-cta"
       >
         Kontakt
-
         <span>→</span>
       </a>
 
@@ -2209,9 +2013,7 @@
   </header>
 
 
-
-  <main id="top">
-
+  <main>
 
     <!-- =================================================
          HERO
@@ -2221,61 +2023,42 @@
 
       <div class="container hero-inner">
 
-
         <div class="hero-content">
 
           <p class="hero-eyebrow">
             Digitale Lösungen für Unternehmen
           </p>
 
-
           <h1>
-
             Lokal stark.
-
-            <span>
-              Digital genauso.
-            </span>
-
+            <span>Digital genauso.</span>
           </h1>
 
-
           <p class="hero-description">
-
             Websites, Online-Shops und digitale Lösungen,
             die zu deinem Unternehmen passen – individuell
             entwickelt, klar umgesetzt und persönlich betreut.
-
           </p>
-
 
           <div class="hero-actions">
 
             <a
-              href="#kontakt"
+              href="kontakt.html"
               class="button button-primary"
             >
-
               Projekt besprechen
-
               <span>→</span>
-
             </a>
 
-
             <a
-              href="#leistungen"
+              href="leistungen.html"
               class="button button-secondary"
             >
-
               Leistungen ansehen
-
-              <span>↓</span>
-
+              <span>→</span>
             </a>
 
           </div>
-
 
           <div class="hero-note">
             Persönlich · Individuell · Direkt
@@ -2284,22 +2067,19 @@
         </div>
 
 
-
         <div class="hero-visual">
 
           <img
-            src="hero.png"
+            src="assets/hero.png"
             alt="optimiert.digital – digitale Lösungen für Unternehmen"
             class="hero-image"
           >
 
         </div>
 
-
       </div>
 
     </section>
-
 
 
     <!-- =================================================
@@ -2310,25 +2090,16 @@
 
       <div class="container">
 
-
         <p class="section-label">
           Was wir machen
         </p>
 
-
         <div class="intro-grid reveal">
 
-
           <h2>
-
             Dein Unternehmen.
-
-            <span>
-              Digital besser aufgestellt.
-            </span>
-
+            <span>Digital besser aufgestellt.</span>
           </h2>
-
 
           <div class="intro-copy">
 
@@ -2337,24 +2108,20 @@
             </strong>
 
             <p>
-
               Wir entwickeln digitale Lösungen,
               die wirklich zu deinem Unternehmen passen.
               Vom professionellen Webauftritt über
               E-Commerce bis zu individuellen
               digitalen Lösungen.
-
             </p>
 
           </div>
-
 
         </div>
 
       </div>
 
     </section>
-
 
 
     <!-- =================================================
@@ -2368,28 +2135,21 @@
 
       <div class="container">
 
-
         <p class="section-label">
           Leistungen
         </p>
 
-
         <h2 class="section-heading reveal">
-
           Was wir digital
           <span>für dich lösen.</span>
-
         </h2>
-
 
 
         <div class="services-grid">
 
-
           <!-- WEBSITE -->
 
           <article class="service reveal">
-
 
             <div class="service-icon">
 
@@ -2398,7 +2158,6 @@
                 fill="none"
                 aria-hidden="true"
               >
-
                 <rect
                   x="4"
                   y="5"
@@ -2422,11 +2181,9 @@
                   stroke-width="1.6"
                   stroke-linecap="round"
                 />
-
               </svg>
 
             </div>
-
 
             <div class="service-content">
 
@@ -2435,11 +2192,9 @@
               </h3>
 
               <p>
-
                 Individuelle Websites für Unternehmen,
                 die professionell auftreten und digital
                 überzeugen wollen.
-
               </p>
 
             </div>
@@ -2447,11 +2202,9 @@
           </article>
 
 
-
-          <!-- ONLINE SHOP -->
+          <!-- ONLINE SHOPS -->
 
           <article class="service reveal">
-
 
             <div class="service-icon">
 
@@ -2460,7 +2213,6 @@
                 fill="none"
                 aria-hidden="true"
               >
-
                 <path
                   d="M5 7H8L11 21H25L28 11H10"
                   stroke="currentColor"
@@ -2482,11 +2234,9 @@
                   r="1.5"
                   fill="currentColor"
                 />
-
               </svg>
 
             </div>
-
 
             <div class="service-content">
 
@@ -2495,11 +2245,9 @@
               </h3>
 
               <p>
-
                 Durchdachte E-Commerce-Lösungen
                 für Unternehmen, die Produkte oder
                 Dienstleistungen digital verkaufen.
-
               </p>
 
             </div>
@@ -2507,11 +2255,9 @@
           </article>
 
 
-
-          <!-- DIGITAL -->
+          <!-- DIGITALE LÖSUNGEN -->
 
           <article class="service reveal">
-
 
             <div class="service-icon">
 
@@ -2520,7 +2266,6 @@
                 fill="none"
                 aria-hidden="true"
               >
-
                 <circle
                   cx="8"
                   cy="8"
@@ -2558,11 +2303,9 @@
                   stroke-width="1.6"
                   stroke-linecap="round"
                 />
-
               </svg>
 
             </div>
-
 
             <div class="service-content">
 
@@ -2571,24 +2314,20 @@
               </h3>
 
               <p>
-
                 Individuelle digitale Lösungen,
                 die Prozesse vereinfachen und dein
                 Unternehmen sinnvoll unterstützen.
-
               </p>
 
             </div>
 
           </article>
 
-
         </div>
 
       </div>
 
     </section>
-
 
 
     <!-- =================================================
@@ -2602,7 +2341,6 @@
 
       <div class="container approach-inner">
 
-
         <p class="section-label">
           Unser Ansatz
         </p>
@@ -2610,19 +2348,11 @@
 
         <div class="approach-main reveal">
 
-
           <h2>
-
             Digital.
-
-            <span>
-              Einfach.
-            </span>
-
+            <span>Einfach.</span>
             Optimiert.
-
           </h2>
-
 
           <div class="approach-copy">
 
@@ -2631,22 +2361,17 @@
             </strong>
 
             <p>
-
               Klare Kommunikation, kurze Wege
               und digitale Lösungen, die wirklich
               zu deinem Unternehmen passen.
-
             </p>
 
           </div>
 
-
         </div>
 
 
-
         <div class="principles">
-
 
           <article class="principle reveal">
 
@@ -2655,15 +2380,12 @@
             </h3>
 
             <p>
-
               Direkter Kontakt und persönliche
               Zusammenarbeit vom ersten Gespräch
               bis zur Umsetzung.
-
             </p>
 
           </article>
-
 
 
           <article class="principle reveal">
@@ -2673,15 +2395,12 @@
             </h3>
 
             <p>
-
               Keine Lösungen von der Stange.
               Wir bauen das, was dein Unternehmen
               wirklich braucht.
-
             </p>
 
           </article>
-
 
 
           <article class="principle reveal">
@@ -2691,21 +2410,17 @@
             </h3>
 
             <p>
-
               Design, Technik und Prozesse
               greifen sinnvoll ineinander.
-
             </p>
 
           </article>
-
 
         </div>
 
       </div>
 
     </section>
-
 
 
     <!-- =================================================
@@ -2719,23 +2434,17 @@
 
       <div class="container">
 
-
         <p class="section-label">
           Zusammenarbeit
         </p>
 
-
         <h2 class="section-heading reveal">
-
           Von der Idee
           <span>bis zum Launch.</span>
-
         </h2>
 
 
-
         <div class="process-list">
-
 
           <article class="process-item reveal">
 
@@ -2744,15 +2453,12 @@
             </h3>
 
             <p>
-
               Wir sprechen über dein Unternehmen,
               deine aktuelle Situation und darüber,
               was du digital erreichen möchtest.
-
             </p>
 
           </article>
-
 
 
           <article class="process-item reveal">
@@ -2762,15 +2468,12 @@
             </h3>
 
             <p>
-
               Daraus entsteht eine individuelle
               Lösung mit klarer Struktur,
               passendem Design und sinnvoller Technik.
-
             </p>
 
           </article>
-
 
 
           <article class="process-item reveal">
@@ -2780,15 +2483,12 @@
             </h3>
 
             <p>
-
               Wir bringen alles zusammen,
               testen den finalen Auftritt und
               machen dein Projekt bereit für den Launch.
-
             </p>
 
           </article>
-
 
 
           <article class="process-item reveal">
@@ -2798,22 +2498,18 @@
             </h3>
 
             <p>
-
               Auch nach dem Launch bleiben wir
               Ansprechpartner und entwickeln
               deine digitale Lösung bei Bedarf weiter.
-
             </p>
 
           </article>
-
 
         </div>
 
       </div>
 
     </section>
-
 
 
     <!-- =================================================
@@ -2827,42 +2523,27 @@
 
       <div class="container contact-inner reveal">
 
-
         <p class="contact-label">
           BEREIT FÜR DEN NÄCHSTEN SCHRITT?
         </p>
 
-
         <h2>
-
           Lass uns dein Unternehmen
-
-          <span>
-            digital optimieren.
-          </span>
-
+          <span>digital optimieren.</span>
         </h2>
 
-
         <p class="contact-description">
-
           Erzähl uns kurz, wo du aktuell stehst
           und was du digital verbessern möchtest.
-
         </p>
 
-
         <a
-          href="mailto:alex@optimiert.digital"
+          href="kontakt.html"
           class="button button-primary"
         >
-
           Projekt besprechen
-
           <span>→</span>
-
         </a>
-
 
         <a
           href="mailto:alex@optimiert.digital"
@@ -2871,14 +2552,11 @@
           alex@optimiert.digital
         </a>
 
-
       </div>
 
     </section>
 
-
   </main>
-
 
 
   <!-- ===================================================
@@ -2889,26 +2567,23 @@
 
     <div class="container footer-main">
 
+      <!-- BRAND -->
 
       <div class="footer-brand">
 
-
         <a
-          href="#top"
+          href="index.html"
           class="logo"
+          aria-label="optimiert.digital Startseite"
         >
 
           <span
             class="logo-mark"
             aria-hidden="true"
           >
-
             <span class="logo-ring"></span>
-
             <span class="logo-line"></span>
-
           </span>
-
 
           <span class="logo-text">
             OPTIMIERT.DIGITAL
@@ -2916,18 +2591,15 @@
 
         </a>
 
-
         <p>
-
           Websites, Online-Shops und digitale Lösungen
           für Unternehmen.
-
         </p>
-
 
       </div>
 
 
+      <!-- NAVIGATION -->
 
       <div class="footer-column">
 
@@ -2935,25 +2607,26 @@
           Navigation
         </strong>
 
-        <a href="#leistungen">
+        <a href="leistungen.html">
           Leistungen
         </a>
 
-        <a href="#ansatz">
-          Über uns
-        </a>
-
-        <a href="#prozess">
+        <a href="prozess.html">
           Prozess
         </a>
 
-        <a href="#kontakt">
+        <a href="about.html">
+          Über uns
+        </a>
+
+        <a href="kontakt.html">
           Kontakt
         </a>
 
       </div>
 
 
+      <!-- RECHTLICHES -->
 
       <div class="footer-column">
 
@@ -2973,11 +2646,20 @@
           AGB
         </a>
 
+
+        <!-- EMAIL BUTTON -->
+
+        <a
+          href="mailto:alex@optimiert.digital"
+          class="footer-email-button"
+        >
+          alex@optimiert.digital
+          <span>→</span>
+        </a>
+
       </div>
 
-
     </div>
-
 
 
     <div class="container footer-bottom">
@@ -2996,83 +2678,52 @@
   </footer>
 
 
-
   <!-- ===================================================
        JAVASCRIPT
        =================================================== -->
 
   <script>
-
     document.addEventListener(
       "DOMContentLoaded",
       function () {
-
-
-        /* ===============================================
-           ELEMENTS
-           =============================================== */
 
         const body =
           document.body;
 
         const header =
-          document.querySelector(
-            ".header"
-          );
+          document.querySelector(".header");
 
         const menuButton =
-          document.querySelector(
-            ".menu-button"
-          );
+          document.querySelector(".menu-button");
 
         const mobileMenu =
-          document.querySelector(
-            ".mobile-menu"
-          );
+          document.querySelector(".mobile-menu");
 
         const mobileLinks =
-          document.querySelectorAll(
-            ".mobile-menu a"
-          );
+          document.querySelectorAll(".mobile-menu a");
 
         const year =
-          document.querySelector(
-            "#year"
-          );
+          document.querySelector("#year");
 
 
-        /* ===============================================
-           YEAR
-           =============================================== */
+        /* YEAR */
 
         if (year) {
-
           year.textContent =
             new Date().getFullYear();
-
         }
 
 
-        /* ===============================================
-           MOBILE MENU
-           =============================================== */
+        /* MOBILE MENU */
 
         function closeMenu() {
 
-          if (
-            !menuButton ||
-            !mobileMenu
-          ) {
+          if (!menuButton || !mobileMenu) {
             return;
           }
 
-          menuButton.classList.remove(
-            "open"
-          );
-
-          mobileMenu.classList.remove(
-            "open"
-          );
+          menuButton.classList.remove("open");
+          mobileMenu.classList.remove("open");
 
           menuButton.setAttribute(
             "aria-expanded",
@@ -3087,26 +2738,17 @@
           body.classList.remove(
             "menu-open"
           );
-
         }
 
 
         function openMenu() {
 
-          if (
-            !menuButton ||
-            !mobileMenu
-          ) {
+          if (!menuButton || !mobileMenu) {
             return;
           }
 
-          menuButton.classList.add(
-            "open"
-          );
-
-          mobileMenu.classList.add(
-            "open"
-          );
+          menuButton.classList.add("open");
+          mobileMenu.classList.add("open");
 
           menuButton.setAttribute(
             "aria-expanded",
@@ -3121,31 +2763,21 @@
           body.classList.add(
             "menu-open"
           );
-
         }
 
 
-        if (
-          menuButton &&
-          mobileMenu
-        ) {
+        if (menuButton && mobileMenu) {
 
           menuButton.addEventListener(
             "click",
             function () {
 
               if (
-                mobileMenu.classList.contains(
-                  "open"
-                )
+                mobileMenu.classList.contains("open")
               ) {
-
                 closeMenu();
-
               } else {
-
                 openMenu();
-
               }
 
             }
@@ -3170,12 +2802,8 @@
           "keydown",
           function (event) {
 
-            if (
-              event.key === "Escape"
-            ) {
-
+            if (event.key === "Escape") {
               closeMenu();
-
             }
 
           }
@@ -3186,21 +2814,15 @@
           "resize",
           function () {
 
-            if (
-              window.innerWidth > 1050
-            ) {
-
+            if (window.innerWidth > 1050) {
               closeMenu();
-
             }
 
           }
         );
 
 
-        /* ===============================================
-           HEADER SCROLL
-           =============================================== */
+        /* HEADER SCROLL */
 
         function updateHeader() {
 
@@ -3208,27 +2830,15 @@
             return;
           }
 
-          if (
-            window.scrollY > 20
-          ) {
-
-            header.classList.add(
-              "scrolled"
-            );
-
+          if (window.scrollY > 20) {
+            header.classList.add("scrolled");
           } else {
-
-            header.classList.remove(
-              "scrolled"
-            );
-
+            header.classList.remove("scrolled");
           }
 
         }
 
-
         updateHeader();
-
 
         window.addEventListener(
           "scroll",
@@ -3239,19 +2849,14 @@
         );
 
 
-        /* ===============================================
-           SCROLL REVEAL
-           =============================================== */
+        /* SCROLL REVEAL */
 
         const reveals =
-          document.querySelectorAll(
-            ".reveal"
-          );
+          document.querySelectorAll(".reveal");
 
 
         if (
-          "IntersectionObserver"
-          in window
+          "IntersectionObserver" in window
         ) {
 
           const observer =
@@ -3265,15 +2870,11 @@
                 entries.forEach(
                   function (entry) {
 
-                    if (
-                      entry.isIntersecting
-                    ) {
+                    if (entry.isIntersecting) {
 
                       entry.target
                         .classList
-                        .add(
-                          "visible"
-                        );
+                        .add("visible");
 
                       observerInstance
                         .unobserve(
@@ -3300,13 +2901,10 @@
           reveals.forEach(
             function (element) {
 
-              observer.observe(
-                element
-              );
+              observer.observe(element);
 
             }
           );
-
 
         } else {
 
@@ -3324,10 +2922,7 @@
 
       }
     );
-
   </script>
 
-
 </body>
-
 </html>
