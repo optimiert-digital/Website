@@ -2,33 +2,1301 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>optimiert.digital</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="optimiert.digital entwickelt moderne Websites, Online-Shops und digitale Lösungen für Unternehmen."
+  >
+
+  <title>optimiert.digital — Websites & digitale Lösungen</title>
+
+  <style>
+    /* =========================================
+       OPTIMIERT.DIGITAL
+       STARTSEITE V1
+       ========================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #070707;
+      color: #f5f5f5;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+
+    /* =========================================
+       HEADER
+       ========================================= */
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      z-index: 1000;
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+
+      background: rgba(7,7,7,.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(1380px, calc(100% - 48px));
+      height: 84px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+
+      font-size: 14px;
+    }
+
+    .nav a {
+      opacity: .68;
+      transition:
+        opacity .2s ease,
+        transform .2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .header-cta {
+      padding: 12px 19px;
+
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 100px;
+
+      opacity: 1 !important;
+
+      transition:
+        background .25s ease,
+        color .25s ease !important;
+    }
+
+    .header-cta:hover {
+      background: #fff;
+      color: #050505;
+    }
+
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      padding: 150px 0 80px;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 750px;
+      height: 750px;
+
+      top: -270px;
+      right: -200px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,255,255,.08),
+          transparent 68%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(1380px, calc(100% - 48px));
+
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 30px;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,.48);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      box-shadow:
+        0 0 18px rgba(255,255,255,.8);
+    }
+
+    .hero h1 {
+      max-width: 1100px;
+
+      font-size: clamp(64px, 9vw, 145px);
+
+      line-height: .88;
+
+      letter-spacing: -7px;
+
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: rgba(255,255,255,.26);
+    }
+
+    .hero-bottom {
+      margin-top: 60px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+
+      color: rgba(255,255,255,.62);
+
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      min-height: 54px;
+
+      padding: 0 25px;
+
+      border-radius: 100px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #f5f5f5;
+      color: #050505;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,.4);
+    }
+
+
+    /* =========================================
+       MARQUEE
+       ========================================= */
+
+    .marquee {
+      overflow: hidden;
+
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+
+      padding: 20px 0;
+    }
+
+    .marquee-track {
+      width: max-content;
+
+      display: flex;
+
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-content {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+
+      padding-right: 35px;
+
+      color: rgba(255,255,255,.4);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+    }
+
+    .marquee-content b {
+      color: rgba(255,255,255,.85);
+    }
+
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    /* =========================================
+       GENERAL SECTION
+       ========================================= */
+
+    .section {
+      padding: 140px 0;
+    }
+
+    .container {
+      width: min(1380px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .section-head {
+      display: grid;
+
+      grid-template-columns:
+        minmax(160px, .5fr)
+        1.5fr;
+
+      gap: 60px;
+
+      margin-bottom: 80px;
+    }
+
+    .section-number {
+      color: rgba(255,255,255,.3);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 900px;
+
+      font-size: clamp(40px, 5vw, 76px);
+
+      line-height: 1;
+
+      letter-spacing: -3.5px;
+    }
+
+
+    /* =========================================
+       SERVICES
+       ========================================= */
+
+    .services {
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .service {
+      display: grid;
+
+      grid-template-columns:
+        80px
+        1fr
+        minmax(300px, .65fr)
+        50px;
+
+      gap: 30px;
+
+      align-items: center;
+
+      padding: 35px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+
+      transition: padding .25s ease;
+    }
+
+    .service:hover {
+      padding-left: 12px;
+    }
+
+    .service-index {
+      color: rgba(255,255,255,.3);
+
+      font-size: 12px;
+    }
+
+    .service-name {
+      font-size: clamp(25px, 3vw, 44px);
+
+      font-weight: 700;
+
+      letter-spacing: -1.5px;
+    }
+
+    .service-description {
+      color: rgba(255,255,255,.48);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+    .service-arrow {
+      font-size: 25px;
+
+      opacity: .35;
+
+      transition:
+        opacity .25s ease,
+        transform .25s ease;
+    }
+
+    .service:hover .service-arrow {
+      opacity: 1;
+
+      transform: translate(4px, -4px);
+    }
+
+
+    /* =========================================
+       APPROACH
+       ========================================= */
+
+    .approach {
+      background: #f2f2f0;
+      color: #090909;
+    }
+
+    .approach .section-number {
+      color: rgba(0,0,0,.4);
+    }
+
+    .approach-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    .approach-card {
+      min-height: 340px;
+
+      padding: 35px;
+
+      border-right: 1px solid rgba(0,0,0,.15);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .approach-card:last-child {
+      border-right: none;
+    }
+
+    .approach-number {
+      color: rgba(0,0,0,.4);
+
+      font-size: 12px;
+    }
+
+    .approach-card h3 {
+      margin-bottom: 15px;
+
+      font-size: 30px;
+
+      letter-spacing: -1.2px;
+    }
+
+    .approach-card p {
+      color: rgba(0,0,0,.55);
+
+      line-height: 1.65;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================
+       PROJECTS
+       ========================================= */
+
+    .projects {
+      background: #070707;
+    }
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 16px;
+    }
+
+    .project {
+      position: relative;
+
+      min-height: 520px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      background:
+        linear-gradient(
+          135deg,
+          #161616,
+          #090909
+        );
+    }
+
+    .project:nth-child(2) {
+      background:
+        linear-gradient(
+          135deg,
+          #1d1d1d,
+          #0c0c0c
+        );
+    }
+
+    .project-inner {
+      position: absolute;
+      inset: 0;
+
+      padding: 40px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-type {
+      color: rgba(255,255,255,.4);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      font-size: clamp(35px, 4vw, 60px);
+
+      letter-spacing: -2.5px;
+    }
+
+    .project p {
+      margin-top: 12px;
+
+      color: rgba(255,255,255,.5);
+
+      line-height: 1.5;
+    }
+
+
+    /* =========================================
+       CTA
+       ========================================= */
+
+    .cta-section {
+      min-height: 80vh;
+
+      display: flex;
+      align-items: center;
+
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .cta-inner {
+      width: min(1380px, calc(100% - 48px));
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .cta-inner p {
+      margin-bottom: 25px;
+
+      color: rgba(255,255,255,.4);
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .cta-inner h2 {
+      max-width: 1000px;
+
+      margin: 0 auto 50px;
+
+      font-size: clamp(55px, 8vw, 120px);
+
+      line-height: .92;
+
+      letter-spacing: -6px;
+    }
+
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      width: min(1380px, calc(100% - 48px));
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: rgba(255,255,255,.4);
+
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 900px) {
+
+      .header-inner,
+      .hero-inner,
+      .container,
+      .cta-inner,
+      .footer-inner {
+        width: min(100% - 30px, 1380px);
+      }
+
+      .header-inner {
+        height: 70px;
+      }
+
+      .nav a:not(.header-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .hero-bottom {
+        margin-top: 45px;
+
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 55px;
+      }
+
+      .section-title {
+        letter-spacing: -2.5px;
+      }
+
+      .service {
+        grid-template-columns: 40px 1fr 30px;
+
+        gap: 15px;
+
+        padding: 27px 0;
+      }
+
+      .service-description {
+        display: none;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-card {
+        min-height: 260px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(0,0,0,.15);
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        min-height: 430px;
+      }
+
+      .cta-inner h2 {
+        letter-spacing: -4px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 20px;
+      }
+    }
+
+
+    @media (max-width: 520px) {
+
+      .hero h1 {
+        font-size: 58px;
+        letter-spacing: -3.5px;
+      }
+
+      .hero-actions {
+        width: 100%;
+
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .service-name {
+        font-size: 25px;
+      }
+
+      .project-inner {
+        padding: 27px;
+      }
+
+      .cta-inner h2 {
+        font-size: 54px;
+        letter-spacing: -3px;
+      }
+    }
+
+  </style>
 </head>
 
-<body style="
-  margin:0;
-  background:#080808;
-  color:white;
-  font-family:Arial,sans-serif;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-">
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="header-inner">
+
+      <a href="#" class="logo">
+        optimiert.digital
+      </a>
+
+      <nav class="nav">
+
+        <a href="#leistungen">
+          Leistungen
+        </a>
+
+        <a href="#projekte">
+          Projekte
+        </a>
+
+        <a href="#prozess">
+          Ablauf
+        </a>
+
+        <a
+          href="mailto:alex@optimiert.digital"
+          class="header-cta"
+        >
+          Projekt starten
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
 
   <main>
-    <p style="opacity:.55; letter-spacing:3px;">OPTIMIERT.DIGITAL</p>
 
-    <h1 style="font-size:clamp(42px,8vw,100px); margin:15px 0;">
-      Wir sind live.
-    </h1>
+    <section class="hero">
 
-    <p style="opacity:.7;">
-      Unsere erste Website außerhalb von Shopify.
-    </p>
+      <div class="hero-inner">
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          Websites & digitale Lösungen
+
+        </div>
+
+
+        <h1>
+          Lokal stark.<br>
+          <span>Digital genauso.</span>
+        </h1>
+
+
+        <div class="hero-bottom">
+
+          <p class="hero-copy">
+            Wir entwickeln digitale Auftritte für Unternehmen,
+            die nicht einfach nur online sein wollen.
+            Klar konzipiert, individuell gestaltet und auf das
+            Wesentliche optimiert.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              href="mailto:alex@optimiert.digital"
+              class="btn btn-primary"
+            >
+              Projekt anfragen →
+            </a>
+
+            <a
+              href="#projekte"
+              class="btn btn-secondary"
+            >
+              Projekte ansehen
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MARQUEE -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+        <div class="marquee-content">
+          <b>Webdesign</b> ·
+          Websites ·
+          Online-Shops ·
+          Digitale Lösungen ·
+          Strategie ·
+          <b>optimiert.digital</b> ·
+        </div>
+
+        <div class="marquee-content">
+          <b>Webdesign</b> ·
+          Websites ·
+          Online-Shops ·
+          Digitale Lösungen ·
+          Strategie ·
+          <b>optimiert.digital</b> ·
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- LEISTUNGEN -->
+
+    <section
+      class="section"
+      id="leistungen"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-number">
+            01 / Leistungen
+          </div>
+
+          <h2 class="section-title">
+            Digital dort optimieren,
+            wo es einen Unterschied macht.
+          </h2>
+
+        </div>
+
+
+        <div class="services">
+
+          <div class="service">
+
+            <div class="service-index">
+              01
+            </div>
+
+            <div class="service-name">
+              Websites
+            </div>
+
+            <div class="service-description">
+              Individuelle Unternehmenswebsites mit Fokus auf
+              Design, Nutzerführung und einem professionellen
+              digitalen Auftritt.
+            </div>
+
+            <div class="service-arrow">
+              ↗
+            </div>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-index">
+              02
+            </div>
+
+            <div class="service-name">
+              Online-Shops
+            </div>
+
+            <div class="service-description">
+              Durchdachte E-Commerce-Lösungen für Unternehmen,
+              die Produkte und Dienstleistungen digital verkaufen.
+            </div>
+
+            <div class="service-arrow">
+              ↗
+            </div>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-index">
+              03
+            </div>
+
+            <div class="service-name">
+              Digitale Lösungen
+            </div>
+
+            <div class="service-description">
+              Individuelle digitale Systeme und Lösungen,
+              abgestimmt auf Prozesse, Anforderungen und Ziele.
+            </div>
+
+            <div class="service-arrow">
+              ↗
+            </div>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-index">
+              04
+            </div>
+
+            <div class="service-name">
+              Betreuung
+            </div>
+
+            <div class="service-description">
+              Weiterentwicklung, Anpassungen und technischer
+              Support auch nach dem Launch.
+            </div>
+
+            <div class="service-arrow">
+              ↗
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABLAUF -->
+
+    <section
+      class="section approach"
+      id="prozess"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-number">
+            02 / Zusammenarbeit
+          </div>
+
+          <h2 class="section-title">
+            Einfacher Prozess.
+            Klare Umsetzung.
+          </h2>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+          <article class="approach-card">
+
+            <div class="approach-number">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Verstehen.
+              </h3>
+
+              <p>
+                Wir schauen uns dein Unternehmen,
+                deine aktuelle Situation und das konkrete
+                Ziel des Projekts an.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="approach-card">
+
+            <div class="approach-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Entwickeln.
+              </h3>
+
+              <p>
+                Daraus entsteht ein individueller digitaler
+                Auftritt – von der Struktur bis zum finalen
+                Design.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="approach-card">
+
+            <div class="approach-number">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Optimieren.
+              </h3>
+
+              <p>
+                Nach dem Launch bleiben wir Ansprechpartner
+                und entwickeln die Lösung bei Bedarf weiter.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJEKTE -->
+
+    <section
+      class="section projects"
+      id="projekte"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-number">
+            03 / Projekte
+          </div>
+
+          <h2 class="section-title">
+            Ausgewählte Arbeiten.
+          </h2>
+
+        </div>
+
+
+        <div class="project-grid">
+
+          <article class="project">
+
+            <div class="project-inner">
+
+              <div class="project-type">
+                Immobilien / Webdesign
+              </div>
+
+              <div>
+
+                <h3>
+                  mbc Immobilien
+                </h3>
+
+                <p>
+                  Digitaler Unternehmensauftritt mit
+                  Immobilien- und Exposé-Struktur.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-inner">
+
+              <div class="project-type">
+                Barber / Webdesign
+              </div>
+
+              <div>
+
+                <h3>
+                  JM Barbershop
+                </h3>
+
+                <p>
+                  Moderner lokaler Webauftritt für
+                  mehrere Standorte.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+      <div class="cta-inner">
+
+        <p>
+          Dein Unternehmen. Digital optimiert.
+        </p>
+
+        <h2>
+          Lass uns etwas
+          Starkes bauen.
+        </h2>
+
+        <a
+          href="mailto:alex@optimiert.digital"
+          class="btn btn-primary"
+        >
+          Projekt besprechen →
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        © 2026 optimiert.digital
+      </div>
+
+      <div class="footer-links">
+
+        <a href="mailto:alex@optimiert.digital">
+          Kontakt
+        </a>
+
+        <a href="/impressum.html">
+          Impressum
+        </a>
+
+        <a href="/datenschutz.html">
+          Datenschutz
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
