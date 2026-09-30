@@ -79,10 +79,6 @@
         <span class="wordmark">OPTIMIERT<span>.DIGITAL</span></span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 8h16"/><path class="l2" d="M4 16h16"/></svg>
-      </button>
-
       <nav id="nav" class="nav" aria-label="Hauptnavigation">
         <a href="#ansatz">Ansatz</a>
         <a href="#pakete">Pakete</a>
@@ -287,29 +283,52 @@
 
     <!-- ÜBER UNS -->
     <section class="section" id="ueber-uns">
-      <div class="wrap split">
-        <div>
-          <h2>Über Uns</h2>
+      <div class="wrap">
+        <div class="about-head">
+          <div>
+            <p class="eyebrow">Der Mensch dahinter</p>
+            <h2 class="about-title">Persönlich.<br><span>Direkt erreichbar.</span></h2>
+          </div>
           <!-- TODO: Text durch deine eigene Geschichte ersetzen -->
-          <p class="body-lg">optimiert.digital unterstützt lokale Unternehmen dabei, online gefunden zu werden und Abläufe zu vereinfachen.</p>
-          <p class="body-lg">Wir arbeiten persönlich und direkt, ohne Agentur-Overhead. Du hast einen festen Ansprechpartner, der deine Lösung auch umsetzt.</p>
-          <p class="owner">Inhaber: Alex Picu</p>
+          <div class="about-text">
+            <p class="body-lg">optimiert.digital unterstützt lokale Unternehmen dabei, online gefunden zu werden und Abläufe zu vereinfachen.</p>
+            <p class="body-lg">Wir arbeiten persönlich und direkt, ohne Agentur-Overhead. Du hast einen festen Ansprechpartner, der deine Lösung auch umsetzt.</p>
+          </div>
         </div>
 
-        <!-- Shopify Partner.
-             Das offizielle Shopify-Partner-Logo darf nur in der Originalfassung verwendet werden.
-             Lade es aus dem Shopify-Partner-Dashboard herunter, speichere es als assets/shopify-partner.svg
-             und ersetze das Icon unten durch: <img src="assets/shopify-partner.svg" alt="Shopify Partner" height="40"> -->
-        <aside class="partner" aria-labelledby="partner-title">
-          <div class="partner-head">
-            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>
-            <h3 id="partner-title">Shopify Partner</h3>
-          </div>
-          <ul class="checks">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Shopify-Shops aufbauen, anpassen und betreuen</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Persönlicher Support direkt vom Inhaber</li>
-          </ul>
-        </aside>
+        <div class="about-cards">
+          <article class="card card-person">
+            <span class="ico-box"><svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg></span>
+            <div class="card-body">
+              <p class="eyebrow">Webdesign · E-Commerce · Digitale Prozesse</p>
+              <h3>Alex Picu</h3>
+              <p>Fokus auf digitale Auftritte, Online-Shops und Lösungen, die lokale Unternehmen moderner und effizienter aufstellen.</p>
+            </div>
+          </article>
+
+          <!-- Shopify-Logo: Das offizielle Logo darf nur im Original verwendet werden.
+               Speichere es als assets/shopify.svg (Shopify-Partner-Dashboard bzw. Shopify-Brand-Assets).
+               Sobald die Datei vorhanden ist, erscheint sie automatisch, bis dahin zeigt die Seite ein neutrales Taschen-Icon. -->
+          <article class="card card-shopify">
+            <span class="ico-box ico-box-shopify">
+              <img src="assets/shopify.svg" alt="" width="36" height="36" onerror="this.remove()">
+              <svg class="icon icon-fallback" aria-hidden="true"><use href="#i-bag"/></svg>
+            </span>
+            <span class="badge">Shopify Partner</span>
+            <div class="card-body">
+              <p class="eyebrow">Unsere E-Commerce-Plattform</p>
+              <h3>Warum Shopify?</h3>
+              <p class="card-strong">Eine starke digitale Lösung braucht ein starkes Fundament.</p>
+              <p>Shopify zählt zu den weltweit führenden E-Commerce-Plattformen. Wir setzen auf Shopify, weil sich professionelle Online-Shops damit zuverlässig, flexibel und benutzerfreundlich aufbauen und langfristig weiterentwickeln lassen.</p>
+              <ul class="grid-checks">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Einfach zu bedienen</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Flexibel erweiterbar</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Für Wachstum ausgelegt</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Starkes App-Ökosystem</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -329,7 +348,6 @@
             <a class="btn btn-outline btn-xl" href="tel:+491775984619">
               <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Jetzt anrufen
             </a>
-            <p class="cta-meta">alex@optimiert.digital<br>+49 177 5984619</p>
           </div>
         </div>
       </div>
@@ -344,7 +362,6 @@
           <span class="wordmark">OPTIMIERT<span>.DIGITAL</span></span>
         </a>
         <p class="muted-light">Digitaloptimierung für lokale Unternehmen.<br>Digital. Einfach. Optimiert.</p>
-        <p><a href="mailto:alex@optimiert.digital">alex@optimiert.digital</a><br><a href="tel:+491775984619">+49 177 5984619</a></p>
       </div>
       <nav aria-label="Seitennavigation">
         <h2 class="footer-title">Navigation</h2>
