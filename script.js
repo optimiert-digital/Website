@@ -1,46 +1,10 @@
-// Mobile-Menü
-(function () {
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.getElementById('nav');
-  if (!toggle || !nav) return;
-
-  var desktop = window.matchMedia('(min-width: 861px)');
-
-  function setOpen(open) {
-    nav.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    document.body.classList.toggle('menu-open', open);
-  }
-
-  toggle.addEventListener('click', function () {
-    setOpen(!nav.classList.contains('open'));
-  });
-
-  nav.addEventListener('click', function (e) {
-    if (e.target.closest('a')) setOpen(false);
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
-      setOpen(false);
-      toggle.focus();
-    }
-  });
-
-  // Beim Wechsel auf Desktop-Breite Menü zurücksetzen
-  var reset = function (e) { if (e.matches) setOpen(false); };
-  if (desktop.addEventListener) desktop.addEventListener('change', reset);
-  else if (desktop.addListener) desktop.addListener(reset);
-})();
-
 // Hover-Effekt am Handy: Das Element, das gerade mittig im Bild steht, wird hervorgehoben
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (!window.matchMedia('(hover: none)').matches) return;
 
   var targets = document.querySelectorAll(
-    '.usp li, .principles li, .process li, .tier, .partner, .cta'
+    '.usp li, .principles li, .process li, .tier, .card, .cta'
   );
 
   var observer = new IntersectionObserver(function (entries) {
