@@ -2,11 +2,13 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>optimiert.digital – Digitaloptimierung für lokale Unternehmen</title>
   <meta name="description" content="Moderne Websites, Online-Shops und digitale Lösungen für lokale Unternehmen. Persönlich, individuell und zum Festpreis.">
   <link rel="canonical" href="https://optimiert.digital/">
   <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="optimiert.digital">
@@ -24,19 +26,54 @@
     "@type": "ProfessionalService",
     "name": "optimiert.digital",
     "url": "https://optimiert.digital/",
+    "logo": "https://optimiert.digital/favicon.svg",
     "email": "alex@optimiert.digital",
     "description": "Digitaloptimierung für lokale Unternehmen: Websites, Online-Shops und digitale Lösungen."
   }
   </script>
 </head>
 <body>
+
+  <!-- Symbol-Sprite: Logo und Icons (einmal definiert, überall per <use> genutzt) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <!-- Logo: zwei Ringbögen + blauer Schnitt -->
+    <symbol id="logo-mark" viewBox="200 170 900 900">
+      <path fill="#fff" d="M826.9 316.6A352 352 0 0 0 343.1 800.4L404.8 738.7A268 268 0 0 1 765.2 378.3Z"/>
+      <path fill="#fff" d="M943.9 433.6A352 352 0 0 1 460.1 917.4L521.8 855.7A268 268 0 0 0 882.2 495.3Z"/>
+      <path fill="#0a47ff" d="M228 1055Q613 581 1077 186Q692 660 228 1055Z"/>
+    </symbol>
+
+    <!-- Icons (24×24, Linienstil) -->
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-workflow" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6M2 9h20"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  </svg>
+
   <a class="skip" href="#inhalt">Direkt zum Inhalt</a>
 
   <header class="site-header">
     <div class="wrap bar">
-      <a class="brand" href="#top" aria-label="optimiert.digital, zum Seitenanfang">OPTIMIERT<span>.DIGITAL</span></a>
+      <a class="brand" href="#top" aria-label="optimiert.digital, zum Seitenanfang">
+        <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="wordmark">OPTIMIERT<span>.DIGITAL</span></span>
+      </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menü</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 8h16"/><path class="l2" d="M4 16h16"/></svg>
+      </button>
 
       <nav id="nav" class="nav" aria-label="Hauptnavigation">
         <a href="#ansatz">Ansatz</a>
@@ -67,10 +104,34 @@
 
       <div class="wrap">
         <ul class="usp">
-          <li><strong>Persönlich &amp; vor Ort</strong><span>Direkte Betreuung und echte Partnerschaft.</span></li>
-          <li><strong>Maßgeschneiderte Lösungen</strong><span>Individuell auf dein Unternehmen zugeschnitten.</span></li>
-          <li><strong>Moderner digitaler Auftritt</strong><span>Professionell, überzeugend und benutzerfreundlich.</span></li>
-          <li><strong>Einfache Prozesse</strong><span>Digitale Abläufe, die dir Zeit und Arbeit sparen.</span></li>
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <div>
+              <strong>Persönlich &amp; vor Ort</strong>
+              <span>Direkte Betreuung und echte Partnerschaft.</span>
+            </div>
+          </li>
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg></span>
+            <div>
+              <strong>Maßgeschneiderte Lösungen</strong>
+              <span>Individuell auf dein Unternehmen zugeschnitten.</span>
+            </div>
+          </li>
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+            <div>
+              <strong>Moderner digitaler Auftritt</strong>
+              <span>Professionell, überzeugend und benutzerfreundlich.</span>
+            </div>
+          </li>
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-workflow"/></svg></span>
+            <div>
+              <strong>Einfache Prozesse</strong>
+              <span>Digitale Abläufe, die dir Zeit und Arbeit sparen.</span>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
@@ -83,25 +144,35 @@
           <p class="sub">Kein unnötiger Agentur-Ballast.</p>
           <p class="body-lg">Wir entwickeln digitale Lösungen, die wirklich zu deinem Unternehmen passen. Klar aufgebaut, professionell umgesetzt und darauf ausgelegt, deinen digitalen Alltag einfacher zu machen.</p>
         </div>
-        <dl class="principles">
-          <div>
-            <dt>Direkt</dt>
-            <dd>Klare Kommunikation, kurze Wege und persönliche Zusammenarbeit.</dd>
-          </div>
-          <div>
-            <dt>Individuell</dt>
-            <dd>Keine Lösungen von der Stange. Wir bauen das, was dein Unternehmen braucht.</dd>
-          </div>
-          <div>
-            <dt>Durchdacht</dt>
-            <dd>Design, Technik und Prozesse greifen bei uns sinnvoll ineinander.</dd>
-          </div>
-        </dl>
+
+        <ul class="principles">
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
+            <div>
+              <h3>Direkt</h3>
+              <p>Klare Kommunikation, kurze Wege und persönliche Zusammenarbeit.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-gem"/></svg></span>
+            <div>
+              <h3>Individuell</h3>
+              <p>Keine Lösungen von der Stange. Wir bauen das, was dein Unternehmen braucht.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <div>
+              <h3>Durchdacht</h3>
+              <p>Design, Technik und Prozesse greifen bei uns sinnvoll ineinander.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- PAKETE -->
-    <section class="section section-blue" id="pakete">
+    <section class="section" id="pakete">
       <div class="wrap">
         <div class="section-head">
           <h2>Digital. Passend zu deinem Unternehmen.</h2>
@@ -110,48 +181,57 @@
 
         <div class="steps">
           <article class="tier">
-            <h3>ONLINE</h3>
+            <div class="tier-head">
+              <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+              <h3>ONLINE</h3>
+            </div>
             <p class="price">1.190 €<span> einmalig</span></p>
-            <ul>
-              <li>Individuelle Website</li>
-              <li>Mobile Optimierung</li>
-              <li>Leistungen &amp; Kontakt</li>
-              <li>Google Maps &amp; Social Media</li>
-              <li>SEO-Grundeinrichtung</li>
-              <li>Einweisung</li>
-              <li>14 Tage Support</li>
+            <ul class="checks">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Individuelle Website</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Mobile Optimierung</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Leistungen &amp; Kontakt</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Google Maps &amp; Social Media</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>SEO-Grundeinrichtung</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Einweisung</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>14 Tage Support</li>
             </ul>
-            <a class="btn btn-dark" href="#kontakt" data-paket="ONLINE">Projekt anfragen</a>
+            <a class="btn btn-outline" href="#kontakt" data-paket="ONLINE">Projekt anfragen</a>
           </article>
 
           <article class="tier">
-            <h3>VERKAUF</h3>
+            <div class="tier-head">
+              <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>
+              <h3>VERKAUF</h3>
+            </div>
             <p class="price">1.990 €<span> einmalig</span></p>
-            <ul>
+            <ul class="checks">
               <li class="includes">Alles aus ONLINE +</li>
-              <li>Online-Shop</li>
-              <li>Bis zu 10 Angebote / Produkte</li>
-              <li>Gutscheine &amp; Pakete</li>
-              <li>Zahlungsabwicklung &amp; Checkout</li>
-              <li>Test des gesamten Kaufprozesses</li>
-              <li>Einweisung</li>
-              <li>30 Tage Support</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Online-Shop</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Bis zu 10 Angebote / Produkte</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Gutscheine &amp; Pakete</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Zahlungsabwicklung &amp; Checkout</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Test des gesamten Kaufprozesses</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Einweisung</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>30 Tage Support</li>
             </ul>
-            <a class="btn btn-dark" href="#kontakt" data-paket="VERKAUF">Projekt anfragen</a>
+            <a class="btn btn-outline" href="#kontakt" data-paket="VERKAUF">Projekt anfragen</a>
           </article>
 
           <article class="tier tier-top">
-            <h3>KOMPLETT</h3>
+            <div class="tier-head">
+              <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-badge"/></svg></span>
+              <h3>KOMPLETT</h3>
+            </div>
             <p class="price">2.990 €<span> einmalig</span></p>
-            <ul>
+            <ul class="checks">
               <li class="includes">Alles aus ONLINE &amp; VERKAUF +</li>
-              <li>Individueller Markenauftritt</li>
-              <li>Google-Unternehmensprofil</li>
-              <li>Local SEO</li>
-              <li>Unterstützung bei Domain und Business-E-Mail</li>
-              <li>Einrichtung von Kundenkonten und Kundenbereich</li>
-              <li>Newsletter-Anmeldung und grundlegende Kundenbindung</li>
-              <li>30 Tage Prioritäts-Support</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Individueller Markenauftritt</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Google-Unternehmensprofil</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Local SEO</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Unterstützung bei Domain und Business-E-Mail</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Einrichtung von Kundenkonten und Kundenbereich</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Newsletter-Anmeldung und grundlegende Kundenbindung</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>30 Tage Prioritäts-Support</li>
             </ul>
             <a class="btn btn-primary" href="#kontakt" data-paket="KOMPLETT">Projekt anfragen</a>
           </article>
@@ -164,23 +244,27 @@
       <div class="wrap">
         <div class="section-head">
           <h2>So läuft dein Projekt ab</h2>
-          <p class="body-lg">Vier Schritte, vom ersten Gespräch bis zur fertigen Lösung.</p>
+          <p class="body-lg">Vom ersten Gespräch bis zur fertigen Lösung, in vier klaren Schritten.</p>
         </div>
         <!-- TODO: Text an deinen echten Ablauf anpassen -->
         <ol class="process">
           <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
             <h3>Erst-Check</h3>
             <p>Wir sprechen kurz über dein Unternehmen, deine Ziele und darüber, was du wirklich brauchst.</p>
           </li>
           <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span>
             <h3>Angebot</h3>
             <p>Du bekommst ein passendes Paket zum Festpreis, ohne versteckte Kosten.</p>
           </li>
           <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
             <h3>Umsetzung</h3>
             <p>Wir gestalten und bauen deine Lösung. Du gibst Feedback, bis alles passt.</p>
           </li>
           <li>
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-rocket"/></svg></span>
             <h3>Start &amp; Support</h3>
             <p>Du bekommst eine Einweisung, wir gehen live und unterstützen dich in der Startphase.</p>
           </li>
@@ -189,26 +273,30 @@
     </section>
 
     <!-- ÜBER UNS -->
-    <section class="section section-grey" id="ueber-uns">
-      <div class="wrap split">
+    <section class="section" id="ueber-uns">
+      <div class="wrap split about">
         <div>
           <h2>Über uns</h2>
-        </div>
-        <div>
           <!-- TODO: Text durch deine eigene Geschichte ersetzen -->
           <p class="body-lg">optimiert.digital unterstützt lokale Unternehmen dabei, online gefunden zu werden und Abläufe zu vereinfachen.</p>
           <p class="body-lg">Wir arbeiten persönlich und direkt, ohne Agentur-Overhead. Du hast einen festen Ansprechpartner, der deine Lösung auch umsetzt.</p>
+        </div>
+        <div class="emblem" aria-hidden="true">
+          <svg class="logo-big"><use href="#logo-mark"/></svg>
         </div>
       </div>
     </section>
 
     <!-- KONTAKT -->
-    <section class="section section-black" id="kontakt">
+    <section class="section" id="kontakt">
       <div class="wrap split">
         <div>
           <h2>Erst-Check anfragen</h2>
           <p class="body-lg">Schreib uns kurz, worum es geht. Wir melden uns persönlich bei dir.</p>
-          <p class="direct">Oder direkt per E-Mail:<br><a href="mailto:alex@optimiert.digital">alex@optimiert.digital</a></p>
+          <a class="direct" href="mailto:alex@optimiert.digital">
+            <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <span>alex@optimiert.digital</span>
+          </a>
         </div>
 
         <!-- TODO: Formspree-Endpunkt eintragen (siehe Anleitung) -->
@@ -259,7 +347,10 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <p class="brand brand-footer">OPTIMIERT<span>.DIGITAL</span></p>
+        <a class="brand brand-footer" href="#top" aria-label="optimiert.digital, zum Seitenanfang">
+          <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+          <span class="wordmark">OPTIMIERT<span>.DIGITAL</span></span>
+        </a>
         <p class="muted-light">Digitaloptimierung für lokale Unternehmen.<br>Digital. Einfach. Optimiert.</p>
         <p><a href="mailto:alex@optimiert.digital">alex@optimiert.digital</a></p>
       </div>
