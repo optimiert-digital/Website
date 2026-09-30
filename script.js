@@ -34,61 +34,52 @@
   else if (desktop.addListener) desktop.addListener(reset);
 })();
 
-// Paket aus der Preisübersicht im Formular vorauswählen
+// Hover-Effekt am Handy: Das Element, das gerade mittig im Bild steht, wird hervorgehoben
 (function () {
-  var select = document.getElementById('paket');
-  if (!select) return;
+  if (!('IntersectionObserver' in window)) return;
+  if (!window.matchMedia('(hover: none)').matches) return;
 
-  document.querySelectorAll('[data-paket]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      select.value = link.getAttribute('data-paket');
+  var targets = document.querySelectorAll(
+    '.usp li, .principles li, .process li, .tier, .partner, .cta'
+  );
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      entry.target.classList.toggle('is-active', entry.isIntersecting);
     });
-  });
+  }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+
+  targets.forEach(function (el) { observer.observe(el); });
 })();
 
-// Kontaktformular (Formspree) ohne Seitenwechsel absenden
+// Schnellzugriff (Anrufen / E-Mail) am Handy: erst nach dem Hero, nicht im Kontaktbereich
 (function () {
-  var form = document.getElementById('kontaktformular');
-  var status = document.getElementById('formstatus');
-  if (!form || !status) return;
+  var dock = document.getElementById('dock');
+  var hero = document.getElementById('top');
+  var contact = document.getElementById('kontakt');
+  var footer = document.querySelector('.site-footer');
+  if (!dock || !hero || !contact || !('IntersectionObserver' in window)) return;
 
-  function show(message, type) {
-    status.textContent = message;
-    status.className = 'form-status ' + type;
+  var state = { heroGone: false, contactVisible: false, footerVisible: false };
+
+  function update() {
+    dock.classList.toggle('show', state.heroGone && !state.contactVisible && !state.footerVisible);
   }
 
-  form.addEventListener('submit', function (e) {
-    if (form.action.indexOf('DEINE_FORM_ID') !== -1) {
-      e.preventDefault();
-      show('Das Formular ist noch nicht verbunden. Bitte schreib uns direkt an alex@optimiert.digital.', 'error');
-      return;
-    }
+  new IntersectionObserver(function (entries) {
+    state.heroGone = !entries[0].isIntersecting;
+    update();
+  }, { rootMargin: '-50% 0px 0px 0px' }).observe(hero);
 
-    if (!window.fetch) return; // Fallback: normales Absenden
+  new IntersectionObserver(function (entries) {
+    state.contactVisible = entries[0].isIntersecting;
+    update();
+  }).observe(contact);
 
-    e.preventDefault();
-    var button = form.querySelector('button[type="submit"]');
-    button.disabled = true;
-    show('Wird gesendet …', '');
-
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(function (response) {
-        if (response.ok) {
-          form.reset();
-          show('Danke, deine Anfrage ist angekommen. Wir melden uns bei dir.', 'ok');
-        } else {
-          throw new Error('Serverfehler');
-        }
-      })
-      .catch(function () {
-        show('Das Senden hat nicht geklappt. Bitte versuch es erneut oder schreib an alex@optimiert.digital.', 'error');
-      })
-      .finally(function () {
-        button.disabled = false;
-      });
-  });
+  if (footer) {
+    new IntersectionObserver(function (entries) {
+      state.footerVisible = entries[0].isIntersecting;
+      update();
+    }).observe(footer);
+  }
 })();
